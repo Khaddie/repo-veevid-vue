@@ -1,0 +1,68 @@
+.title {
+    font-family: $font;
+    font-size: pxToRem(45);
+    line-height: pxToRem(45);
+    color: $gris;
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+    span {
+       position: relative;
+       z-index: 2;
+    }
+ 
+    &::before {
+       content: "";
+       width: 100%;
+       height: pxToRem(10);
+       background-color: $bleuMain;
+       display: inline-block;
+       position: absolute;
+       bottom: 0;
+       left: 0;
+    }
+ 
+    &.-tiny {
+       font-size: pxToRem(36);
+       line-height: pxToRem(36);
+    }
+ 
+    &.-huge {
+       font-size: pxToRem(60);
+       line-height: pxToRem(70);
+       margin: 0px;
+       letter-spacing: 2px;
+ 
+       /*@include test-up {
+          font-size: pxToRem(50);
+          line-height: pxToRem(70);
+          margin: 0px;
+          letter-spacing: 2px;
+       }
+ */
+       @include medium-only() {
+          font-size: 2.75rem;
+          line-height: 3.375rem;
+       }
+ 
+       &::before {
+          height: 15px;
+          width: 100%;
+          z-index: -1;
+          margin-bottom: pxToRem(10);
+       }
+    }
+ }
+ 
+ .titleh3 {
+    font-family: $font;
+    font-size: pxToRem(26);
+    line-height: pxToRem(26);
+ }
+ 
+ .body {
+    font-family: $font;
+    font-size: pxToRem(18);
+    line-height: pxToRem(18);
+ }
+ 

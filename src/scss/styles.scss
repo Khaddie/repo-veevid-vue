@@ -1,5 +1,31 @@
-@import "@/scss/reset.scss";
+//VARIABLES
+@import "vars.scss";
 
-* {
-  background-color: blue;
+//FOUNDATION
+@import "foundation/reset.scss";
+@import "foundation/functions.scss";
+@import "foundation/mixins.scss";
+
+// OBJECTS
+@import "objects/grid.scss";
+
+//ELEMENTS
+@import "elements/buttons.scss";
+@import "elements/title.scss";
+@import "elements/bandeau.scss";
+@import "elements/principal.scss";
+
+//COMPONENTS
+@import "components/compte.scss";
+@import "components/header.scss";
+@import "components/footer.scss";
+@import "components/step.scss";
+@import "components/values.scss";
+
+html {
+    font-size: $rootFontSize + px;
 }
+* {
+    font-family: $font;
+}
+
