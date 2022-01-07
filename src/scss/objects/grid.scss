@@ -1,0 +1,64 @@
+@use "sass:math";
+
+$maxColumns : 12;
+
+.container{
+    max-width: 1200px;
+    margin : 0 auto;
+
+}
+
+.row{
+    display : flex;
+    flex-wrap: wrap;
+    &.-center{
+      justify-content:center;
+    }
+    &.-center-step{ //Responsive de la zone etapes jeu concours
+        justify-content:center;
+        background-color: $beige;
+        margin: pxToRem(64) auto;
+      }
+    &.-vcenter{
+        align-items: center;
+    }
+
+}
+
+
+ 
+
+@for $i from 1 through $maxColumns{
+    .col-#{$i}{
+        flex-basis : calculate-width($i);
+        max-width: calculate-width($i);
+    }
+    
+}
+
+@include medium-up(){
+    @for $i from 1 through $maxColumns{
+        .col-md-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+       
+    }
+}
+
+@include large-up(){
+    @for $i from 1 through $maxColumns{
+        .col-l-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+    }
+}
+@include x-large-up(){
+    @for $i from 1 through $maxColumns{
+        .col-xl-#{$i}{
+            flex-basis : calculate-width($i);
+            max-width: calculate-width($i);
+        }
+    }
+}

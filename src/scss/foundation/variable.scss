@@ -1,0 +1,59 @@
+// BASE HTML
+
+$font: "Sen", sans-serif;
+$rootFontSize: 16;
+
+// PC
+
+$h1FontSize: pxToRem(45);
+$h2FontSize: 36;
+$h3FontSize: 26;
+
+$bodyFontSize: 18;
+
+$boutonFontSize: 18;
+$boutonHomeFontSize : 22;
+$linkFontSize: 16;
+
+$footerFontSize:14;
+
+// ORDI PORT
+
+$boutonFontSizeOP: 16;
+$boutonHomeFontSizeOP : 20;
+$linkFontSizeOP: 14;
+
+// TABLETTE
+
+$boutonFontSizeT: 16;
+$boutonHomeFontSizeT : 19;
+$linkFontSizeT: 14;
+
+// MOBILE
+
+$h1FontSizeM: 25;
+$h2FontSizeM: 20;
+$h3FotnSizeM: 18;
+
+$bodyFontSizeM: 18;
+
+$boutonFontSizeM: 18;
+$boutonHomeFontSizeM : 20;
+$linkFontSizeM: 16;
+
+$infoFontSizeM:15;
+
+// Couleur
+
+$gris: #333333;
+$beige: #fff1e2;
+$bleuSecond: #dbfffa;
+$orange: #ff5f00;
+$bleuMain: #00ffe0;
+
+//Taille
+$small : 460px;
+$medium : 640px;
+$large : 960px;
+$x-large : 1200px;
+$section-h: 220px;
