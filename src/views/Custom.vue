@@ -451,14 +451,590 @@
   <!---Fin Section custom taille-->
 </template>
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Custom',
   components: {
-    HelloWorld
+
+  },
+  mounted: function () {
+    "use strict";
+
+    function clickSurUnLien(evt) {
+
+      evt.preventDefault();
+      var selecteurDuSlide = this.getAttribute('href');
+      console.log("", selecteurDuSlide)
+
+      var ancien = document.querySelector('.customCourant');
+      ancien.classList.remove('customCourant');
+      var nouveau = document.querySelector(selecteurDuSlide);
+      nouveau.classList.add("customCourant");
+
+    }
+
+    var liens = document.querySelectorAll("#customId a");
+    for (var i = 0; i < liens.length; i++) {
+      var lien = liens[i];
+      lien.addEventListener("click", clickSurUnLien);
+    }
+
+
+    var header = document.getElementById("customId");
+    var btns = header.getElementsByClassName("courantCustom");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+      });
+    }
+    var header = document.getElementById("Menucustom");
+    var btns = header.getElementsByClassName("Courantmenu");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("Menuactive");
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" Menuactive", "");
+        }
+        this.className += " Menuactive";
+      });
+    }
   }
 }
+
+
 </script>
->>>>>>> Stashed changes
+<style lang="scss">
+//Partie pc
+
+.custom {
+  width: 85%;
+  margin: auto;
+  padding-top: 60px;
+  text-align: initial;
+
+  .col-l-4 {
+    p {
+      color: $orange;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-weight: 900;
+      font-size: $h3FontSize;
+      margin-bottom: 25px;
+
+    }
+  }
+
+  .col-l-5 {
+    img {
+      width: 560px;
+    }
+
+    .__icone {
+      padding-top: 20px;
+      float: right;
+      margin-right: 30px;
+
+      li {
+        display: inline-block;
+        padding: 5px;
+        cursor: pointer;
+
+        svg {
+          path {
+            &:nth-of-type(1) {
+              &:hover {
+                fill: $bleuMain;
+                stroke: $bleuMain;
+              }
+            }
+          }
+        }
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+    }
+
+    .__3d {
+      position: relative;
+      top: -60px;
+      text-align: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+    }
+  }
+
+  .col-l-3 {
+
+    ul {
+      font-size: $linkFontSizeOP;
+      list-style: none;
+
+      li {
+        padding: 8px;
+
+        &::before {
+          @include customMenu;
+          border: 1px solid $bleuMain;
+        }
+
+        &:hover::before {
+          background-color: $bleuMain;
+        }
+
+        a {
+          color: $gris;
+
+          &:hover {
+            color: $orange;
+
+          }
+        }
+      }
+
+      .Menuactive {
+        padding: 8px;
+
+        &::before {
+          @include customMenu;
+          background-color: $bleuMain;
+        }
+      }
+
+    }
+  }
+
+  ._customRowColPrix {
+    display: flex;
+
+    .button-txt-arrow {
+      font-size: 12px;
+      padding: 0.5rem 0 0.25rem 0.5rem;
+
+      svg {
+        width: 2rem;
+      }
+    }
+
+    p {
+      margin-right: 20px;
+      color: $gris;
+      font-size: $boutonHomeFontSize;
+      font-weight: 900;
+      padding-top: 30px;
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background: url(./../assets/draw/flower.png) no-repeat;
+        background-size: 100%;
+        margin-right: 2px;
+      }
+
+    }
+  }
+
+  ._customRowColDesign {
+
+    background: url(./../assets/draw/Texture.jpg) no-repeat;
+    background-size: 95%;
+    height: 130px;
+    width: 300px;
+
+    p {
+      text-align: center;
+      color: $gris;
+
+      a {
+        color: $gris;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      padding-top: 25px;
+      color: $gris;
+      font-weight: 600;
+      font-size: $linkFontSize;
+
+    }
+  }
+
+  ._customRowcolReini {
+    margin-top: 20px;
+
+    p {
+      color: $gris;
+
+      &:nth-of-type(1) {
+        font-size: 12px;
+
+        &::before {
+          content: ">>";
+          display: inline-block;
+          margin-right: 2px;
+          color: $orange;
+          font-weight: 600;
+        }
+      }
+
+      &:nth-of-type(2) {
+        font-size: $linkFontSizeOP;
+
+        &::before {
+          content: "X";
+          display: inline-block;
+          margin-right: 4px;
+          color: $gris;
+
+        }
+      }
+
+      a {
+        color: $gris;
+
+
+      }
+
+    }
+  }
+
+}
+
+._menucustom {
+  ._menucustomCol {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      margin-right: 90px;
+      margin-bottom: 20px;
+
+      li {
+        margin-right: 20px;
+        font-size: $boutonFontSize;
+        font-weight: 600;
+        list-style-type: none;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $orange;
+
+        &::after {
+          content: "<";
+          transform: rotate(267deg);
+          display: inline-block;
+          margin-left: 60px;
+          color: rgba($color: #333, $alpha: 0.5);
+        }
+
+        &:hover::after {
+          transform: rotate(175deg);
+          color: $orange;
+        }
+
+        a {
+          text-decoration: none;
+          color: rgba($color: #333, $alpha: 0.5);
+
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+.__taille {
+  ._taillecustom {
+    @include custom;
+
+    ul {
+      @include customul;
+
+      li {
+        @include customli;
+
+        input {
+          display: none;
+        }
+
+        label {
+          color: #1a1a1a;
+          background: $beige;
+          font-size: 15px;
+          @include customlabel;
+
+          &:hover {
+            background-color: $orange;
+            color: $gris;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.__couleur {
+  ._couleurcustom {
+    @include custom;
+
+    ul {
+      @include customul;
+
+      li {
+        @include customli;
+        border-radius: 30px;
+
+        &:nth-of-type(1) {
+          background-color: $couleur1;
+        }
+
+        &:nth-of-type(2) {
+          background-color: $couleur2;
+        }
+
+        &:nth-of-type(3) {
+          background-color: $couleur3;
+        }
+
+        &:nth-of-type(4) {
+          background-color: $couleur4;
+        }
+
+        &:nth-of-type(5) {
+          background-color: $couleur5;
+        }
+
+        &:nth-of-type(6) {
+          background-color: $couleur6;
+        }
+
+        &:nth-of-type(7) {
+          background-color: $couleur7;
+        }
+
+        &:nth-of-type(8) {
+          background-color: $couleur8;
+        }
+
+        &:nth-of-type(9) {
+          background-color: $couleur9;
+        }
+
+        &:nth-of-type(10) {
+          background-color: $couleur10;
+        }
+
+        &:nth-of-type(11) {
+          background-color: $couleur11;
+          border: 2px solid $beige;
+        }
+
+        &:nth-of-type(12) {
+          background-color: $couleur12;
+        }
+
+        &:nth-of-type(13) {
+          background-color: $couleur13;
+
+        }
+
+        &:nth-of-type(14) {
+          background-color: $couleur14;
+        }
+
+        input {
+          display: none;
+        }
+
+        label {
+          @include customlabel;
+        }
+      }
+
+    }
+  }
+}
+
+
+.__motif {
+  ._motifcustom {
+    @include custom;
+
+    ul {
+      @include customul;
+
+      li {
+        @include customli;
+        margin: 0 5px;
+
+        input {
+          display: none;
+        }
+
+        label {
+          @include customlabel;
+
+          img {
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.__texture {
+  ._texturecustom {
+    @include custom;
+
+    ul {
+      @include customul;
+
+      li {
+        @include customli;
+        margin: 0 5px;
+
+        input {
+          display: none;
+        }
+
+        label {
+          @include customlabel;
+
+          img {
+            width: 50px;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+._broderieCustum {
+  width: 85%;
+
+  .row {
+    margin: 12px;
+
+    ul {
+      padding: 0px !important;
+      margin-top: 5px;
+      @include customul;
+
+      li {
+        @include customli;
+        border-radius: 30px;
+
+        &:nth-of-type(1) {
+          background-color: $couleur1;
+        }
+
+        &:nth-of-type(2) {
+          background-color: $couleur2;
+        }
+
+        input {
+          display: none;
+        }
+
+        label {
+          @include customlabel;
+        }
+      }
+    }
+
+    .row {
+      input {
+        width: 190px;
+        height: 23px;
+        border-radius: 30px;
+        border: 2px solid $orange;
+      }
+
+      label {
+        font-weight: 600;
+      }
+    }
+  }
+
+  p {
+    color: $gris !important;
+
+  }
+}
+
+.slideCustom {
+  > div {
+    display: none;
+  }
+
+  .customCourant {
+    display: block;
+  }
+}
+
+.customDes {
+  width: 70%;
+  margin: auto;
+  padding-top: 30px;
+  h3{
+    font-size: 1.25rem;
+  }
+
+  .row {
+    li {
+      margin-top: 25px;
+      list-style-type: disc;
+    }
+  }
+}
+
+.active {
+  border: 2px solid $orange;
+  border-radius: 30px 0px;
+  color: $orange;
+  padding-left: 20px;
+  padding-top: 10px;
+  transition: ease-in-out;
+
+  li {
+    border-bottom: none !important;
+
+    a {
+      color: $orange !important;
+    }
+
+    &::after {
+      transform: rotate(175deg) !important;
+      color: $orange !important;
+    }
+
+  }
+}
+
+</style>
+//choix custom couleur

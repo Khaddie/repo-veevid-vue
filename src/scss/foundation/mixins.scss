@@ -139,3 +139,47 @@ $x-large: 1200px;
         @content;
     }
 }
+
+// <----------------------custom---------------------->//
+
+
+@mixin customlabel{
+    min-width: 38px;
+    height: 38px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 30px;
+
+}
+@mixin customul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+}
+@mixin customli{
+    display: inline-block;
+    margin: 0 15px;
+
+}
+@mixin custom {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+}
+@mixin customMenu {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+
