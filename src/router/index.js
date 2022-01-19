@@ -15,6 +15,7 @@ import Livraisons from '../views/Livraisons.vue'
 import Mentions from '../views/Mentions.vue'
 import Plan from '../views/Plan.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,7 +25,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/a-propos',
+
+    path: '/about',
+    name: 'About',
+    component:About
+
+  },
+  {
+    path: '/about',
     name: 'About',
     component : About
   },
