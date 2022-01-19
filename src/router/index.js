@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // Pages existantes sur le site
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
 import About from '../views/About.vue'
 import CGU from '../views/CGU.vue'
 import CGV from '../views/CGV.vue'

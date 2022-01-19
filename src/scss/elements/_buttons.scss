@@ -79,6 +79,9 @@
 
 .button-txt-arrow {
     //Deux boutons accueil du dessus //
+    &.-buttonmob{
+        text-align: center;
+    }
     &.-present {
         margin-right: pxToRem(150);
         margin-top: pxToRem(10);

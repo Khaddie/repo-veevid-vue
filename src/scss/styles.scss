@@ -14,6 +14,7 @@
 @import "elements/title.scss";
 @import "elements/bandeau.scss";
 @import "elements/principal.scss";
+@import "elements/reassurance.scss";
 
 //COMPONENTS
 @import "components/compte.scss";
@@ -23,9 +24,9 @@
 @import "components/values.scss";
 
 html {
-    font-size: $rootFontSize + px;
+    font-size: $rootFontSize ;
 }
 * {
     font-family: $font;
-}
+text-decoration: none;}
 
