@@ -1,5 +1,9 @@
 <template>
 <!-- VALEURS PAGE A PROPOS -->
+<section class="nos-valeurs">
+    <div class="t_valeurs">
+        <h2>Nos valeurs</h2> 
+    </div>
     <section class="c-valeurs">
         <div class="row">
             <div class="col-12 col-md-6 c-valeurs__col">
@@ -32,6 +36,7 @@
             </div>
         </div>
     </section>
+</section>
 <!-- FIN VALEURS PAGE A PROPOS -->
 </template>
 

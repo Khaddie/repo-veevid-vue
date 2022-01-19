@@ -1,39 +1,15 @@
-.c-valeur{
-    position: relative;
-    margin: pxToRem(64) pxToRem(0);
-    text-align: left;
-    &__content{
-        padding: pxToRem(32);
-        border-radius: 30px 0px;
-        color: $gris;
-        border: solid 1px $orange;
-        background-color: white;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    &__text{
-        line-height: pxToRem(24);
-        margin: 0;
-    }
-    &__title{
-        margin: 0 0 pxToRem(16) 0;
-        display: block;
-        font-weight: 800;
-    }
-    &:after{
-        content: "";
-        width: 160px;
-        height: 3px;
-        background-color: $bleuMain;
-        display: block;
-        position: absolute;
-        bottom: -60px;
-        left: 50%;
-        margin-left: -80px;
-    }
+.nos-valeurs{
+    padding: 50px; 
+    background-image: url(../assets/draw/fondvaleurs.png);
 }
 
-
+.t-valeurs{
+    h2{
+        font-size: $h2FontSize;
+        text-align: left;
+    }
+}
+//Traits verticaux à partir de 640px
 
 @include medium-up(){
     .c-valeurs{
@@ -49,6 +25,7 @@
             &:nth-of-type(1){
                 .c-valeur{
                     &:after{
+                        content: "";
                         left: 100%;
                         bottom: 0;
                         width: 3px;
@@ -61,6 +38,45 @@
     }
 }
 
+//SCSS d'un bloc valeur
+
+.c-valeur{
+    position: relative;
+    margin-bottom: 120px;
+    text-align: left;
+    &__content{ 
+        padding: pxToRem(32);
+        border-radius: 30px 0px;
+        color: $gris;
+        border: solid 1px $orange;
+        background-color: white;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    &__text{
+        max-width: 400px;
+        line-height: pxToRem(24);
+        margin: 0; 
+    }
+    &__title{
+        margin: 0 0 pxToRem(16) 0;
+        display: block;
+        font-weight: 800;  
+    }
+    &:after{
+        content: "";
+        width: 160px;
+        height: 3px;
+        background-color: $bleuMain;
+        display: block;
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        margin-left: -80px;
+    }
+}
+    
+//En mobile, il ne reste plus que 3 barres bleues
 
 @include small-down(){
     .c-valeurs{
@@ -86,6 +102,9 @@
             &__content{
                 max-width: 550px;
             }
+            &__text{
+                max-width: 550px;
+            }
         }
     }
 }
@@ -94,6 +113,9 @@
     .c-valeurs{
         .c-valeur{
             &__content{
+                max-width: 300px;
+            }
+            &__text{
                 max-width: 300px;
             }
         }
@@ -106,6 +128,9 @@
             &__content{
                 max-width: 250px;
             }
+            &__text{
+                max-width: 250px;
+            }
         }
     }
 }
@@ -114,6 +139,9 @@
     .c-valeurs{
         .c-valeur{
             &__content{
+                max-width: 400px;
+            }
+            &__text{
                 max-width: 400px;
             }
         }
@@ -126,6 +154,9 @@
             &__content{
                 max-width: 310px;
             }
+            &__text{
+                max-width: 310px;
+            }
         }
     }
 }
@@ -135,6 +166,9 @@
         .c-valeur{
             &__content{
                 max-width: 230px;
+            }
+            &__text{
+                max-width: 230px; 
             }
         }
     }
