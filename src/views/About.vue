@@ -1,8 +1,8 @@
 <template>
 <!-- VALEURS PAGE A PROPOS -->
 <section class="nos-valeurs">
-    <div class="t_valeurs">
-        <h2>Nos valeurs</h2> 
+    <div class="title-valeurs">
+        <h2 class="title -tiny">Nos valeurs</h2> 
     </div>
     <section class="c-valeurs">
         <div class="row">
@@ -15,8 +15,8 @@
                 </div>
                 <div class="c-valeur">
                     <div class="c-valeur__content">
-                        <h3 class="c-valeur__title">PARTAGE</h3>
-                        <p class="c-valeur__text">Veevid veut partage le style unique de ses clients en proposant des looks et inspirations pour toujours plus de créations. En plus des posts instagram, la marque se veut généreuse en proposant régulièrement concours et codes promo.  </p>
+                        <h3 class="c-valeur__title">QUALITÉ</h3>
+                        <p class="c-valeur__text"> Une grande attention est porté sur la qualité et les détails de nos produits. Chaque paire personnalisées passe dans des machines contrôlées régulièrement dans nos usines situés à Eisenach. </p>
                     </div>
                 </div>
             </div>
@@ -29,8 +29,8 @@
                 </div>
                 <div class="c-valeur">
                     <div class="c-valeur__content">
-                        <h3 class="c-valeur__title">QUALITÉ</h3>
-                        <p class="c-valeur__text">Une grande attention est porté sur la qualité et les détails de nos produits. Chaque paire personnalisées passe dans des machines contrôlées régulièrement dans nos usines situés à Eisenach. </p>
+                        <h3 class="c-valeur__title">PARTAGE</h3>
+                        <p class="c-valeur__text">Veevid veut partage le style unique de ses clients en proposant des looks et inspirations pour toujours plus de créations. En plus des posts instagram, la marque se veut généreuse en proposant régulièrement concours et codes promo. </p>
                     </div>
                 </div>
             </div>

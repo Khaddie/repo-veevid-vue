@@ -1,21 +1,19 @@
 .nos-valeurs{
-    padding: 50px; 
-    background-image: url(../assets/draw/fondvaleurs.png);
+    background-image: url(~@/assets/draw/fondvaleurs.png);
+    background-size: contain;
 }
 
-.t-valeurs{
-    h2{
-        font-size: $h2FontSize;
-        text-align: left;
-    }
+.title-valeurs{
+    padding: 60px 0px 0px 60px;
 }
-//Traits verticaux à partir de 640px
+
+//Traits verticaux à partir de 640px 
 
 @include medium-up(){
-    .c-valeurs{
+    .c-valeurs{ 
         &__col{
             &:nth-of-type(2){
-                padding-top: 120px;
+                padding-top: 140px;
                 .c-valeur{
                     &:after{
                         content : none;
@@ -43,7 +41,9 @@
 .c-valeur{
     position: relative;
     margin-bottom: 120px;
+    margin-top: 60px;
     text-align: left;
+    padding: 0px 80px;
     &__content{ 
         padding: pxToRem(32);
         border-radius: 30px 0px;
@@ -83,6 +83,9 @@
         &__col{
             &:nth-of-type(2){
                 .c-valeur{
+                    &:nth-of-type(1){
+                        margin-top: 0px;
+                    }
                     &:nth-of-type(2){
                         &:after{
                             display : none;
@@ -96,7 +99,20 @@
 
 /// Responsives
 
-@include x-large-up(){
+@media screen and (min-width: pxToRem(1701)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 700px;
+            }
+            &__text{
+                max-width: 700px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: pxToRem(1401)) and (max-width: pxToRem(1700)) {
     .c-valeurs{
         .c-valeur{
             &__content{
@@ -109,7 +125,20 @@
     }
 }
 
-@media screen and (min-width: pxToRem(800)) and (max-width: pxToRem(1000)) {
+@media screen and (min-width: pxToRem(1201)) and (max-width: pxToRem(1400)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 450px;
+            }
+            &__text{
+                max-width: 450px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: pxToRem(900)) and (max-width: pxToRem(1200)) {
     .c-valeurs{
         .c-valeur{
             &__content{
@@ -122,14 +151,15 @@
     }
 }
 
-@media screen and (min-width: $small) and (max-width: pxToRem(799)) {
+@media screen and (min-width: $small) and (max-width: pxToRem(899)) {
     .c-valeurs{
         .c-valeur{
+            padding: 0px 60px;
             &__content{
-                max-width: 250px;
+                max-width: 220px;
             }
             &__text{
-                max-width: 250px;
+                max-width: 220px;
             }
         }
     }
@@ -138,6 +168,7 @@
 @media screen and (min-width: 510px) and (max-width: ($medium - 1)) {
     .c-valeurs{
         .c-valeur{
+            padding: 0px;
             &__content{
                 max-width: 400px;
             }

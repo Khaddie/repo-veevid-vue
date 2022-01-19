@@ -25,15 +25,10 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component:About
+    path: '/a-propos',
+    name: 'A propos',
+    component: About
 
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component : About
   },
   {
     path: '/conditions-generales-utilisation',
@@ -51,7 +46,7 @@ const routes = [
     component : Compte
   },
   {
-    path: '/jeu-concours',
+    path: '/concours',
     name: 'Concours',
     component : Concours
   },
