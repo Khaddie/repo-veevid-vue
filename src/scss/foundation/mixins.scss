@@ -105,7 +105,7 @@ $x-large: 1200px;
     }
 }
 @mixin small-only() {
-    @media screen and (min-width: $small) and (max-width: ($medium - 1)) {
+    @media screen and (min-width: $small) and (max-width: ($x-large)) {
         @content;
     }
 }
@@ -117,7 +117,13 @@ $x-large: 1200px;
 }
 
 @mixin medium-only() {
-    @media screen and (min-width: $medium) and (min-width: ($large - 1)) {
+    @media screen and (min-width: $medium) and (max-width: ($large - 1)) {
+        @content;
+    }
+}
+
+@mixin medium-down(){
+    @media screen and (max-width: ($large - 1)) {
         @content;
     }
 }

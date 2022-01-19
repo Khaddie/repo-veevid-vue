@@ -3,7 +3,7 @@ section{
     font-size: $bodyFontSize;
     ._SectionImage{
       display: flex;
-      background-image: url("/src/assets/draw/pattern.png");
+      background-image: url("~@/assets/draw/pattern.png");
       background-size: cover;
       height: $section-h;
      
@@ -18,7 +18,7 @@ section{
         
     } 
     .__SectionImage{
-        background-image: url("/src/assets/draw/waves.png");
+        background-image: url("~@/assets/draw/waves.png");
         background-size: cover;
         width: 100px;
         height: 150px;
@@ -58,4 +58,3 @@ section{
   }
     
 }
-  

@@ -3,7 +3,7 @@ body {
 }
 
 .c-header {
-    background: no-repeat url(".././assets/draw/forme_header.svg");
+    background: no-repeat url("~@/assets/draw/forme_header.svg");
     background-position: right bottom -35%;
     height: pxToRem(126);
     display: flex;

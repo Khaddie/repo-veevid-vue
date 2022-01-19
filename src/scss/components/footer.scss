@@ -1,7 +1,7 @@
 footer {
     .footer {
         &__menu {
-            @include small-down() {
+            @include medium-down(){
                 display: flex;
                 flex-direction: column;
                 text-align: left;
@@ -44,18 +44,24 @@ footer {
             ul {
                 margin-right: 4%;
                 padding: 0;
-
+                @include medium-down(){
+                    margin: 5% 0;
+                }
                 li:first-child {
                     font-weight: 800;
-                    margin-top: 0px;
-                    @include small-down() {
+                    margin: 5% 0;
+                    @include medium-down(){
                         text-transform: uppercase;
+                        padding: 10px 0;
                     }
                 }
 
                 li {
                     list-style: none;
-
+                    line-height: pxToRem(30);
+                    @include medium-down(){
+                        line-height: pxToRem(20);
+                    }
                     p {
                         font-size: pxToRem(14);
                     }
@@ -72,12 +78,12 @@ footer {
 
             img {
                 width: 50%;
-                @include small-down() {
+                @include medium-down(){
                     width: 100%;
                 }
             }
             .center {
-                @include small-down() {
+                @include medium-down(){
                     text-align: center;
                     border-top: 0.1rem solid $orange;
                     padding-top: pxToRem(15);
@@ -88,7 +94,7 @@ footer {
             text-align: center;
             font-size: pxToRem(12);
 
-            @include small-down() {
+            @include medium-down(){
                 font-size: pxToRem(8);
                 .copyright {
                     font-weight: bold;

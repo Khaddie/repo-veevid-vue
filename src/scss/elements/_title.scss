@@ -10,7 +10,7 @@
        position: relative;
        z-index: 2;
     }
- 
+
     &::before {
        content: "";
        width: 100%;
@@ -20,6 +20,7 @@
        position: absolute;
        bottom: 0;
        left: 0;
+
     }
  
     &.-tiny {
@@ -32,7 +33,11 @@
        line-height: pxToRem(70);
        margin: 0px;
        letter-spacing: 2px;
- 
+
+      @include small-down() {
+        font-size: pxToRem(30);
+        line-height: pxToRem(40);
+      }
        /*@include test-up {
           font-size: pxToRem(50);
           line-height: pxToRem(70);
@@ -65,4 +70,3 @@
     font-size: pxToRem(18);
     line-height: pxToRem(18);
  }
- 
