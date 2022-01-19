@@ -1,3 +1,4 @@
+
 //VARIABLES
 @import "vars.scss";
 
@@ -5,6 +6,7 @@
 @import "foundation/reset.scss";
 @import "foundation/functions.scss";
 @import "foundation/mixins.scss";
+@import "foundation/variable.scss";
 
 // OBJECTS
 @import "objects/grid.scss";
@@ -28,4 +30,3 @@ html {
 * {
     font-family: $font;
 }
-

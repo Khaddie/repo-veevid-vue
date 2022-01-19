@@ -6,14 +6,14 @@ $rootFontSize: 16;
 // PC
 
 $h1FontSize: pxToRem(45);
-$h2FontSize: 36;
-$h3FontSize: 26;
+$h2FontSize: pxToRem(36);
+$h3FontSize: pxToRem(26);
 
 $bodyFontSize: 18;
 
-$boutonFontSize: 18;
-$boutonHomeFontSize : 22;
-$linkFontSize: 16;
+$boutonFontSize: pxToRem(18);
+$boutonHomeFontSize : pxToRem(22);
+$linkFontSize: pxToRem(16);
 
 $footerFontSize:14;
 
@@ -21,7 +21,7 @@ $footerFontSize:14;
 
 $boutonFontSizeOP: 16;
 $boutonHomeFontSizeOP : 20;
-$linkFontSizeOP: 14;
+$linkFontSizeOP: pxToRem(14);
 
 // TABLETTE
 
@@ -57,3 +57,21 @@ $medium : 640px;
 $large : 960px;
 $x-large : 1200px;
 $section-h: 220px;
+
+//choix custom couleur
+
+$couleur1: #FAFF00;
+$couleur2: #7B61FF;
+$couleur3: #00FFE0;
+$couleur4: #D22F87;
+$couleur5: #10C600;
+$couleur6: #FE620B;
+$couleur7: #F58615;
+$couleur8: #0443A0;
+$couleur9: #A50808;
+$couleur10: #411053;
+$couleur11: #FFFFFF;
+$couleur12: #637160;
+$couleur13: #000000;
+$couleur14: #B9CE3A;
+

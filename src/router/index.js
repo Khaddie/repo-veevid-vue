@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-// Pages existantes sur le site
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import CGU from '../views/CGU.vue'
@@ -15,6 +13,7 @@ import Livraisons from '../views/Livraisons.vue'
 import Mentions from '../views/Mentions.vue'
 import Plan from '../views/Plan.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +21,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component:About
+
   },
   {
     path: '/about',
