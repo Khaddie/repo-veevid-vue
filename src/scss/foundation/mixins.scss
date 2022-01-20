@@ -224,7 +224,7 @@ $x-large: 1200px;
         margin-left: 10%;
 
         @include  small-down() {
-            width:50%;
+            width:35%;
             position: absolute;
             margin-top:-10%;
             margin-left: 0%;

@@ -1,7 +1,7 @@
 .zone_imgtxt{
     @include zone_imgtxt;
     // A partir d'ici, ça ne concerne que la zone de droite
-    &__main{ //div principale
+    &__right{ //div principale
         width: 30%;
         padding: 8% 6%;
         @include  small-down() {
@@ -15,8 +15,75 @@
         text-align: left;
         line-height: pxToRem(32);
         margin-bottom: pxToRem(32);
+        @include small-down() {
+            padding-top: 10%;
+            font-size: $bodyFontSizeM;
+        }
     }
+}
+
+.imgtxt_txt{
+    margin-bottom: 16px;
 }
 
 //RESPONSIVES
 
+@media screen and (min-width: pxToRem(1280)) and (max-width: pxToRem(1480)) {
+    .zone_imgtxt{
+        padding-bottom:2%;
+        &__img{
+            width:60%;
+        }
+        &__right{
+            width: 40%;
+            padding: 5% 6%;
+        }
+        &__txt{
+            line-height: pxToRem(32);
+            margin-bottom: pxToRem(32);
+        }
+    }
+}
+
+@media screen and (min-width: pxToRem(1080)) and (max-width: pxToRem(1279)) {
+    .zone_imgtxt{
+        padding-bottom:2%;
+        &__img{
+            width:60%;
+        }
+        &__right{
+            padding: 3% 4%;
+            width: 40%;
+        }
+        &__txt{
+            line-height: pxToRem(28);
+            margin-bottom: pxToRem(28);
+        }
+    }
+}
+
+@media screen and (max-width: pxToRem(1079)) {
+    .zone_imgtxt{
+        padding-bottom:2%;
+        &__img{
+            width:60%;
+        }
+        &__right{
+            padding: 3% 4%;
+            width: 40%;
+        }
+        &__txt{
+            line-height: pxToRem(28);
+            margin-bottom: pxToRem(28);
+        }
+    }
+}
+
+@media screen and (max-width: pxToRem(900)) {
+        .zone_imgtxt{
+        &__txt{
+            font-size: 16px;
+            line-height: pxToRem(22);
+        }
+    }
+}
