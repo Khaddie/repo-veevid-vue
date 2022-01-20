@@ -26,7 +26,7 @@
                         content: "";
                         left: 100%;
                         bottom: 0;
-                        width: 3px;
+                        width: 4px;
                         height: 160px;
                         margin-left: 0px;
                     }
@@ -63,7 +63,7 @@
         display: block;
         font-weight: 800;  
     }
-    &:after{
+    &:after{ //trait bleu
         content: "";
         width: 160px;
         height: 3px;

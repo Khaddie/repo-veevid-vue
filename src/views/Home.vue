@@ -6,7 +6,7 @@
         <h1 class="title -huge"> dans l’air !</h1>
           <p>
             Découvre la paire Veevid fraîchement crée pour allier ta personnalité et ton style ! Disponible
-            uniquement en pré-commande, personnalise tes futures baskets à ton image.</p>
+            uniquement en pré-commande, personnalise tes futures baskets à ton image.</p> 
 
           <button class="button-txt-arrow -present">
             <a href="#">Je personnalise !</a>

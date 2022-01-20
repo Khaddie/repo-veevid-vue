@@ -189,3 +189,45 @@ $x-large: 1200px;
 
 }
 
+// ZONE IMG TXT / REASSURANCE
+
+@mixin zone_imgtxt {
+    display:flex;
+    flex-direction:row;
+    background-color: $bleuSecond;
+    padding-bottom:3%;
+
+    @include small-down() {
+        flex-direction:column;
+        align-items: center;
+        background-color: white;
+        margin: 20% 0 20% 0;
+        font-style:$bodyFontSizeM;
+    }
+    // A partir d'ici, ça ne concerne que la zone de gauche
+    &__photo{
+        @include small-down() {
+            display:none;
+        }
+    }
+    &__img{
+        display:flex;
+        flex-direction:column;
+        width:70%;
+        @include small-down() {
+            align-items: center;
+        }
+    }
+    &__waves{
+        width:35%;
+        margin-top:-11%;
+        margin-left: 10%;
+
+        @include  small-down() {
+            width:50%;
+            position: absolute;
+            margin-top:-10%;
+            margin-left: 0%;
+            }
+    }
+}

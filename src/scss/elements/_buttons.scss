@@ -91,7 +91,7 @@
     //Fin des deux boutons accueil du dessus //
     @include button-base;
     padding: pxToRem(18) 0 pxToRem(18) pxToRem(18); //haut,droite,bas,gauche
-    font-size: $boutonHomeFontSize + px;
+    font-size: $boutonHomeFontSize;
     @include transition;
     @include button-a-main;
 
@@ -183,7 +183,7 @@
     border: solid 1px $orange;
     background-color: $orange;
     padding: pxToRem(16);
-    font-size: $boutonFontSize + px;
+    font-size: $boutonFontSize;
     position: fixed; // le bouton sera fixe au scroll
     top: 50%;
     right: 0;
@@ -194,6 +194,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 10;
     
     svg{
         @include ico-button;
@@ -220,7 +221,7 @@
 ///////////// RESPONSIVE /////////////
 //////////////////////////////////////
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1040px) {
     /* Règles CSS pour les écrans portables ici */
     .button-txt {
         font-size: $boutonFontSizeOP + px;

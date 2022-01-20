@@ -1,0 +1,22 @@
+.zone_imgtxt{
+    @include zone_imgtxt;
+    // A partir d'ici, ça ne concerne que la zone de droite
+    &__main{ //div principale
+        width: 30%;
+        padding: 8% 6%;
+        @include  small-down() {
+            border: 0.5rem solid $bleuSecond;
+            padding:15%;
+        }
+    }
+    &__txt{
+        font-size: $bodyFontSize;
+        max-width: 600px;
+        text-align: left;
+        line-height: pxToRem(32);
+        margin-bottom: pxToRem(32);
+    }
+}
+
+//RESPONSIVES
+
