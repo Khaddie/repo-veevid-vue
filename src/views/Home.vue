@@ -143,17 +143,15 @@
 
 <div class="c-concoursaccueil">
   <img src="@/assets/draw/flower.png" alt="">
-  <p>Jeu Concours</p>
-  <p>#VeevidCustom</p>
-  <p>Avis aux sneakers addict : une paire de NDP personnalisé ton goût <br>à remporter pour une paire achetée ! </p>
-  <button class="button-txt-arrow -secondary -present">
-    <a href="#">Découvrir</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
-      <path class="pointe"
-            d="M19.082,6.657a1,1,0,0,1,0,1.414l-6.364,6.364A1,1,0,1,1,11.3,13.021l5.657-5.657L11.3,1.707A1,1,0,1,1,12.718.293Z"
-            fill="#333" />
-      <rect class="barre" y="6.364" width="18" height="2" fill="#333" />
-    </svg>
+  <p class="c-concoursaccueil__titre">Jeu Concours</p>
+  <p class="c-concoursaccueil__hashtag">#VeevidCustom</p>
+  <p class="c-concoursaccueil__text">Avis aux sneakers addict : une paire de NDP personnalisé ton goût <br>à remporter pour une paire achetée ! </p>
+  <button class="button-txt -secondary -concours ">
+
+    <router-link to="/jeu-concours">
+      <p class="c-concoursaccueil__text -lien">En savoir plus</p>
+    </router-link>
+
   </button>
 </div>
 
@@ -224,12 +222,34 @@ export default {
 </script>
 <style lang="scss">
 
+.button-txt{
+
+  &.-concours{
+    margin-top: pxToRem(10);
+  }
+}
 .c-concoursaccueil{
-  padding: 5%;
+  padding: 3%;
   line-height: pxToRem(30);
 
   text-align: center;
   background-color: #FFF1E2;
+
+  &__titre{
+    font-size: pxToRem(36);
+    font-weight: 800;
+  }
+  &__hashtag{
+    font-size: pxToRem(25);
+    line-height: pxToRem(50);
+  }
+  &__text{
+    font-size: pxToRem(18);
+
+    &.-lien{
+      font-weight: 700;
+    }
+  }
   img{
     width: 5%;
   }

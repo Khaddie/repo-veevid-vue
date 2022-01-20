@@ -13,10 +13,10 @@
           <router-link to="/custom">
             <li>Vee One Nawaka </li>
           </router-link>
-          <router-link to="/a-propos">
+          <router-link to="/about">
             <li>Il était une fois Veevid</li>
           </router-link>
-          <router-link to="/concours">
+          <router-link to="/jeu-concours">
             <li>Jeu concours</li>
           </router-link>
           <router-link to="/contact">
@@ -26,8 +26,12 @@
           </router-link>
 
           <li><a href=""> <img src="@/assets/icons/ico-heart-empty.svg" alt=""></a></li>
+          <router-link to="/register">
           <li><a href=""> <img src="@/assets/icons/ico-profil.svg" alt=""></a></li>
+          </router-link>
+          <router-link to="/connexion">
           <li><a href=""> <img src="@/assets/icons/ico-basket-empty.svg" alt=""></a></li>
+          </router-link>
         </ul>
       </nav>
     </header>
