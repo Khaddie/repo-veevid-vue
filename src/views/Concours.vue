@@ -51,13 +51,13 @@
           <img class="zone_imgtxt__waves" src="@/assets/draw/waves1.png">
         </div>
         <!-- Texte + bouton -->
-        <div class="zone_imgtxt__main">
+        <div class="zone_imgtxt__right">
             <div class="zone_imgtxt__txt">
-                <p>Si ta publication regroupe tous ces critères, elle sera ajoutée au panel des participants sur cette page. Après ça, plus qu’à voter !</p>
-                <p>Tu as jusqu’au 28 Février 2022 pour élir ta personnalisation favorite.</p>
-                <p>1 vote par jour pour chaque utilisateur.</p>
-                <p>Le gagnant remporte une paire Vee One Nawaka qu’il pourra personnaliser comme il le souhaite !</p>
-                <p>Customise dès maintenant une paire à ton image.</p>
+                <p class="imgtxt_txt">Si ta publication regroupe tous ces critères, elle sera ajoutée au panel des participants sur cette page. Après ça, plus qu’à voter !</p>
+                <p class="imgtxt_txt">Tu as jusqu’au 28 Février 2022 pour élir ta personnalisation favorite.</p>
+                <p class="imgtxt_txt">1 vote par jour pour chaque utilisateur.</p>
+                <p class="imgtxt_txt">Le gagnant remporte une paire Vee One Nawaka qu’il pourra personnaliser comme il le souhaite !</p>
+                <p class="imgtxt_txt">Customise dès maintenant une paire à ton image.</p>
             </div>
             <button class="button-txt">
                 <a href="#">Je participe !</a>
