@@ -19,7 +19,7 @@
           <router-link to="/about">
             <li>Il était une fois Veevid</li>
           </router-link>
-          <router-link to="/jeu-concours">
+          <router-link to="/concours">
             <li>Jeu concours</li>
           </router-link>
           <router-link to="/contact">

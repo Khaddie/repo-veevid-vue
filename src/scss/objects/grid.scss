@@ -17,7 +17,6 @@ $maxColumns : 12;
     &.-center-step{ //Responsive de la zone etapes jeu concours
         justify-content:center;
         background-color: $beige;
-        margin: pxToRem(64) auto;
       }
     &.-vcenter{
         align-items: center;

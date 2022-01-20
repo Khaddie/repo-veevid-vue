@@ -69,33 +69,7 @@
 
 
 .c-reassurancev1{
-  display:flex;
-  flex-direction:row;
-  background-color: $bleuSecond;
-  padding-bottom:8%;
-  @include  small-down() {
-    flex-direction:column;
-    align-items: center;
-    background-color: white;
-    margin: 20% 0 20% 0;
-    font-style:$bodyFontSizeM;
-  }
-
-  &__photo{
-    @include small-down() {
-      display:none;
-    }
-  }
-
-  &__img{
-    display:flex;
-    flex-direction:column;
-    width:50%;
-    @include small-down() {
-      align-items: center;
-    }
-  }
-
+  @include zone_imgtxt;
   &__main{
     display: flex;
     flex-direction: column;
@@ -139,18 +113,6 @@
   &__bloc{
     padding-bottom:10%;
   }
-
-
-  &__waves{
-    width:40%;
-    margin-top:-11%;
-    @include  small-down() {
-      width:50%;
-      position: absolute;
-      margin-top:-10%;
-    }
-  }
-
 
 
 }

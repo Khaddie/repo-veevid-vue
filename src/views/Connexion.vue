@@ -20,6 +20,16 @@
     <div v-if="error">
       <p style="color: red;">{{ errorMessage }}</p>
     </div>
+
+
+    <form @submit="submitShoe">
+      <p>JE CREE </p>
+      <div>
+        <label for="$store.state.user.displayName">Modèle</label>
+        <input id="$store.state.user.displayName" v-model="$store.state.user.displayName" type="text" >
+      </div>
+      <input type="submit" value="submit">
+    </form>
   </div>
 </template>
 
@@ -61,7 +71,23 @@ export default {
         this.error = true
         this.success = false
       })
-    }
+    },
+    submitShoe(screen){
+      axios.post('https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/shoes',
+          {
+            "status":"publish",
+            "title":this.$store.state.user.displayName,
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${this.$store.state.user.authToken}`,
+            }
+          }).then(response =>{
+            if (response.status===200){
+ console.log("ok ca marche")
+            }
+      })      }
 
 
   }
