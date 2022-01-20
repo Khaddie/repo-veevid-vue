@@ -25,13 +25,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
+  },{
+
 
     path: '/about',
     name: 'About',
     component:About
-
   },
   {
     path: '/conditions-generales-utilisation',
@@ -49,7 +48,7 @@ const routes = [
     component : Compte
   },
   {
-    path: '/jeu-concours',
+    path: '/concours',
     name: 'Concours',
     component : Concours
   },

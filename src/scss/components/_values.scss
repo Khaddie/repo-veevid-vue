@@ -1,8 +1,19 @@
+.nos-valeurs{
+    background-image: url(~@/assets/draw/fondvaleurs.png);
+    background-size: contain;
+}
+
+.title-valeurs{
+    padding: 60px 0px 0px 60px;
+}
+
+//Traits verticaux à partir de 640px 
+
 @include medium-up(){
-    .c-valeurs{
+    .c-valeurs{ 
         &__col{
             &:nth-of-type(2){
-                padding-top: 120px;
+                padding-top: 140px;
                 .c-valeur{
                     &:after{
                         content : none;
@@ -12,6 +23,7 @@
             &:nth-of-type(1){
                 .c-valeur{
                     &:after{
+                        content: "";
                         left: 100%;
                         bottom: 0;
                         width: 3px;
@@ -24,11 +36,15 @@
     }
 }
 
+//SCSS d'un bloc valeur
 
 .c-valeur{
     position: relative;
     margin-bottom: 120px;
-    &__content{
+    margin-top: 60px;
+    text-align: left;
+    padding: 0px 80px;
+    &__content{ 
         padding: pxToRem(32);
         border-radius: 30px 0px;
         color: $gris;
@@ -40,12 +56,12 @@
     &__text{
         max-width: 400px;
         line-height: pxToRem(24);
-        margin: 0;
+        margin: 0; 
     }
     &__title{
-        text-align: left;
         margin: 0 0 pxToRem(16) 0;
         display: block;
+        font-weight: 800;  
     }
     &:after{
         content: "";
@@ -57,5 +73,134 @@
         bottom: -60px;
         left: 50%;
         margin-left: -80px;
+    }
+}
+    
+//En mobile, il ne reste plus que 3 barres bleues
+
+@include small-down(){
+    .c-valeurs{
+        &__col{
+            &:nth-of-type(2){
+                .c-valeur{
+                    &:nth-of-type(1){
+                        margin-top: 0px;
+                    }
+                    &:nth-of-type(2){
+                        &:after{
+                            display : none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// Responsives
+
+@media screen and (min-width: pxToRem(1701)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 700px;
+            }
+            &__text{
+                max-width: 700px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: pxToRem(1401)) and (max-width: pxToRem(1700)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 550px;
+            }
+            &__text{
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: pxToRem(1201)) and (max-width: pxToRem(1400)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 450px;
+            }
+            &__text{
+                max-width: 450px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: pxToRem(900)) and (max-width: pxToRem(1200)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 300px;
+            }
+            &__text{
+                max-width: 300px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $small) and (max-width: pxToRem(899)) {
+    .c-valeurs{
+        .c-valeur{
+            padding: 0px 60px;
+            &__content{
+                max-width: 220px;
+            }
+            &__text{
+                max-width: 220px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 510px) and (max-width: ($medium - 1)) {
+    .c-valeurs{
+        .c-valeur{
+            padding: 0px;
+            &__content{
+                max-width: 400px;
+            }
+            &__text{
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: (509px)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 310px;
+            }
+            &__text{
+                max-width: 310px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: (399px)) {
+    .c-valeurs{
+        .c-valeur{
+            &__content{
+                max-width: 230px;
+            }
+            &__text{
+                max-width: 230px; 
+            }
+        }
     }
 }
