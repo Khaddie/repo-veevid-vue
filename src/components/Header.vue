@@ -2,6 +2,9 @@
 
     <header class="c-header">
 
+      <p>Bonjour,{{user.displayName}}</p>
+
+
       <div class="c-header__logo">
       <router-link to="/">
         <img src="@/assets/logo/Logo_base.svg">
@@ -13,7 +16,7 @@
           <router-link to="/custom">
             <li>Vee One Nawaka </li>
           </router-link>
-          <router-link to="/a-propos">
+          <router-link to="/about">
             <li>Il était une fois Veevid</li>
           </router-link>
           <router-link to="/concours">
@@ -26,8 +29,12 @@
           </router-link>
 
           <li><a href=""> <img src="@/assets/icons/ico-heart-empty.svg" alt=""></a></li>
+          <router-link to="/register">
           <li><a href=""> <img src="@/assets/icons/ico-profil.svg" alt=""></a></li>
+          </router-link>
+          <router-link to="/connexion">
           <li><a href=""> <img src="@/assets/icons/ico-basket-empty.svg" alt=""></a></li>
+          </router-link>
         </ul>
       </nav>
     </header>
@@ -36,7 +43,12 @@
 <script>
 
 export default {
-  name: "Header"
+  name: "Header",
+computed:{
+    user(){
+      return this.$store.state.user
+    },
+}
 }
 </script>
 <style lang="scss">

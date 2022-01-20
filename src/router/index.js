@@ -14,6 +14,8 @@ import FAQ from '../views/FAQ.vue'
 import Livraisons from '../views/Livraisons.vue'
 import Mentions from '../views/Mentions.vue'
 import Plan from '../views/Plan.vue'
+import Register from "@/components/Register";
+import Connexion from "@/views/Connexion";
 
 
 Vue.use(VueRouter)
@@ -23,12 +25,12 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/a-propos',
-    name: 'A propos',
-    component: About
+  },{
 
+
+    path: '/about',
+    name: 'About',
+    component:About
   },
   {
     path: '/conditions-generales-utilisation',
@@ -49,6 +51,11 @@ const routes = [
     path: '/concours',
     name: 'Concours',
     component : Concours
+  },
+  {
+    path: '/connexion',
+    name: 'Connexion',
+    component : Connexion
   },
   {
     path: '/contact',
@@ -79,6 +86,11 @@ const routes = [
     path: '/plan-du-site',
     name: 'Plan du site',
     component : Plan
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component : Register
   }
 ]
 
