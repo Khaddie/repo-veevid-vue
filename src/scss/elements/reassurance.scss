@@ -16,6 +16,7 @@
   &__main{
     display:flex;
     flex-direction:row;
+
     @include small-down() {
       border: 0.5rem solid $bleuSecond;
       flex-direction:column;
@@ -75,17 +76,21 @@
     flex-direction: column;
     width: 50%;
     align-items: center;
+    justify-content: center;
     @include  small-down() {
       border: 0.5rem solid $bleuSecond;
       padding:15%;
     }
-
   }
 
   &__iconerea1{
-    width: pxToRem(150);
-    height: pxToRem(150);
+    width: pxToRem(125);
+    height: pxToRem(125);
 
+    @include  large-only() {
+      width: pxToRem(200);
+      height: pxToRem(200);
+    }
   }
 
   &__sousmain1{

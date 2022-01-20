@@ -88,7 +88,6 @@ const router = new VueRouter({
   routes
 })
 
-export default router
 
 
 axios.get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7")
@@ -104,3 +103,5 @@ axios.get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7")
         console.log("ESPACE");
     })
 })
+
+export default router
