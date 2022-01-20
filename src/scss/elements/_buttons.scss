@@ -91,7 +91,7 @@
     //Fin des deux boutons accueil du dessus //
     @include button-base;
     padding: pxToRem(18) 0 pxToRem(18) pxToRem(18); //haut,droite,bas,gauche
-    font-size: $boutonHomeFontSize + px;
+    font-size: $boutonHomeFontSize ;
     @include transition;
     @include button-a-main;
 

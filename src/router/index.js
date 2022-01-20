@@ -34,11 +34,6 @@ const routes = [
 
   },
   {
-    path: '/about',
-    name: 'About',
-    component : About
-  },
-  {
     path: '/conditions-generales-utilisation',
     name: 'CGU',
     component : CGU

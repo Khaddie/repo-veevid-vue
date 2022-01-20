@@ -2,6 +2,9 @@
 
     <header class="c-header">
 
+      <p>Bonjour,{{user.displayName}}</p>
+
+
       <div class="c-header__logo">
       <router-link to="/">
         <img src="@/assets/logo/Logo_base.svg">
@@ -40,7 +43,12 @@
 <script>
 
 export default {
-  name: "Header"
+  name: "Header",
+computed:{
+    user(){
+      return this.$store.state.user
+    },
+}
 }
 </script>
 <style lang="scss">

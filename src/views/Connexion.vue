@@ -25,8 +25,9 @@
 
 <script>
 import axios from "axios"
+
 export default {
-  name:'Connexion',
+  name: 'Connexion',
   data() {
     return {
       form: {
@@ -38,6 +39,7 @@ export default {
       errorMessage: null
     }
   },
+
   methods: {
     submit(event) {
       event.preventDefault()
@@ -47,12 +49,15 @@ export default {
       }).then(response => {
         if (response.status === 200) {
           this.success = true
-          this.error = false
+          this.$store.commit('setUser', {
+            username: response.data.data.displayName,
+            email: response.data.data.email,
+            authToken: response.data.data.token,
+          })
           console.log(response)
         }
       }).catch(error => {
-        console.log('Error LOG : ', error.response)
-        this.errorMessage = error.response.data.message
+        console.log('Error LOG : ', error)
         this.error = true
         this.success = false
       })
