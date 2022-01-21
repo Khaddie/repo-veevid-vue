@@ -11,7 +11,8 @@ export default new Vuex.Store({
             displayName: localStorage.getItem('username') ? localStorage.getItem('username') : null,
             email: localStorage.getItem('email') ? localStorage.getItem('email') : null,
             authToken: localStorage.getItem('authToken') ? localStorage.getItem('authToken') : null,
-        }
+        },
+        reassurance: null
     },
     mutations: {
         setUser(state, data) {
@@ -32,6 +33,9 @@ export default new Vuex.Store({
             state.user.email = null
             state.user.authToken = null
             localStorage.clear();
+        },
+        setReassurance(state, data) {
+            state.reassurance = data
         }
     },
     actions: {},
