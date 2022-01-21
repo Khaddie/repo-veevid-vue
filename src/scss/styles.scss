@@ -6,7 +6,6 @@
 @import "foundation/reset.scss";
 @import "foundation/functions.scss";
 @import "foundation/mixins.scss";
-@import "foundation/variable.scss";
 
 // OBJECTS
 @import "objects/grid.scss";
@@ -26,9 +25,6 @@
 @import "components/step.scss";
 @import "components/values.scss";
 
-html {
-    font-size: $rootFontSize ;
-}
 * {
     font-family: $font;
 text-decoration: none;}
