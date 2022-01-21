@@ -4,6 +4,8 @@
     &__right{ //div principale
         width: 30%;
         display: flex;
+        flex-direction: column;
+        margin: auto 40px;
         @include  small-down() {
             border: 0.5rem solid $bleuSecond;
             padding:15%;
@@ -14,7 +16,6 @@
         max-width: 768px;
         text-align: left;
         line-height: pxToRem(32);
-        margin: auto 40px;
         @include small-down() {
             padding-top: 10%;
             font-size: pxToRem(14);
