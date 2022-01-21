@@ -1,136 +1,71 @@
 // repasser en BEM
 
-.c-reassurance{
+// .c-reassurance{
 
-  display:flex;
-  flex-direction:row;
+//   display:flex;
+//   flex-direction:row;
 
-  @include small-down() {
-    flex-direction:column;
-    align-items: center;
-    background-color: white;
-    margin: 20% 0 20% 0;
-    font-style:$bodyFontSizeM;
-  }
+//   @include small-down() {
+//     flex-direction:column;
+//     align-items: center;
+//     background-color: white;
+//     margin: 20% 0 20% 0;
+//     font-style:$bodyFontSizeM;
+//   }
 
-  &__main{
-    display:flex;
-    flex-direction:row;
+//   &__main{
+//     display:flex;
+//     flex-direction:row;
 
-    @include small-down() {
-      border: 0.5rem solid $bleuSecond;
-      flex-direction:column;
-      align-items: center;
-      width: 80%;
-      padding: 15% 0 15% 0;
-    }
-  }
+//     @include small-down() {
+//       border: 0.5rem solid $bleuSecond;
+//       flex-direction:column;
+//       align-items: center;
+//       width: 80%;
+//       padding: 15% 0 15% 0;
+//     }
+//   }
 
-  &__rea{
-    display:flex;
-    flex-direction:column;
-    width: 25%;
-    align-items: center;
-    @include small-down() {
-      width:75%;
-      padding-bottom:10%;
-    }
-  }
+//   &__rea{
+//     display:flex;
+//     flex-direction:column;
+//     width: 25%;
+//     align-items: center;
+//     @include small-down() {
+//       width:75%;
+//       padding-bottom:10%;
+//     }
+//   }
 
-  &__iconerea{
-    width: pxToRem(150);
-    height: pxToRem(150);
-    @include medium-only() {
-      width:35%;
-      height:65%;
-    }
-    @include small-down(){
-      width:85%;
-      height:65%;
-    }
-  }
+//   &__iconerea{
+//     width: pxToRem(150);
+//     height: pxToRem(150);
+//     @include medium-only() {
+//       width:35%;
+//       height:65%;
+//     }
+//     @include small-down(){
+//       width:85%;
+//       height:65%;
+//     }
+//   }
 
-  &__textrea{
-    font-size: $bodyFontSize;
-    line-height:pxToRem(25);
-    text-align:center;
-    margin:0;
-  }
+//   &__textrea{
+//     font-size: $bodyFontSize;
+//     line-height:pxToRem(25);
+//     text-align:center;
+//     margin:0;
+//   }
 
-  &__waves{
-    display: none;
-    @include small-down() {
-      width:50%;
-      position: absolute;
-      margin-top:-11%;
-      display:flex;
-    }
-  }
-}
+//   &__waves{
+//     display: none;
+//     @include small-down() {
+//       width:50%;
+//       position: absolute;
+//       margin-top:-11%;
+//       display:flex;
+//     }
+//   }
+// }
 
-
-.c-reassurancev1{
-  @include zone_imgtxt;
-  &__main{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    @include  small-down() {
-      border: 0.5rem solid $bleuSecond;
-      padding:15%;
-    }
-  }
-
-  &__iconerea1{
-    width: pxToRem(125);
-    height: pxToRem(125);
-
-    @include  large-only() {
-      width: pxToRem(200);
-      height: pxToRem(200);
-    }
-  }
-
-  &__sousmain1{
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    @include  small-down() {
-      flex-direction:column;
-      align-items: center;
-    }
-  }
-
-  &__sousmain2{
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    @include  small-down() {
-      flex-direction:column;
-      align-items: center;
-    }
-  }
-
-  &__bloc{
-    padding-bottom:10%;
-  }
-
-
-}
-
-.imgrea{
-  width:99%;
-  height:2%;
-  position:absolute;
-  margin-top: 5%;
-  z-index: -2;
-  @include  small-down(){
-    display:none;
-
-  }
-}
 

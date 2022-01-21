@@ -512,8 +512,34 @@
         </div>
       </div>
     </div>
+
+    <!--Zone de réassurance-->
+
+    <div>
+      <img class="imgrea" src="../assets/draw/rectanglenewsletter.png">
+    </div>
+
+    <section class="c-reassurance">
+          <!-- <div class="c-reassurancev1__img">
+              <img class="c-reassurance__waves" src="./../assets/draw/waves1.png">
+          </div> -->
+
+          <div class=c-reassurance__main>
+              <section class="c-reassurance__rea" v-for="(reassurance, index) in reassurances" :key="reassurance.title">
+                  <img class="c-reassurance__iconerea" :src="require(`@/assets/icons/reassurance/${index}.png`)" alt="">
+                  <p class="c-reassurance__textrea"><b>{{reassurance.title_reinsurance}}</b><br> {{reassurance.text_reinsurance}}</p>
+              </section>
+            </div>
+    </section>
+
   </section>
+
+
   <!---Fin Section custom taille-->
+
+
+
+  
 </template>
 <script>
 export default {
@@ -564,9 +590,13 @@ export default {
         this.className += " Menuactive";
       });
     }
+
+
+
+    this.fetchData()
   },
   computed: {
-    reassurance() {
+    reassurances() {
       return this.$store.state.reassurance
     }
   },
@@ -574,25 +604,90 @@ export default {
     fetchData() {
       axios
         .get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7")
-        .then(function (reponse) {
-          let Home = reponse.data;
-          console.log(Home);
+        .then( (reponse) => {
+          console.log(reponse.data);
 
+          this.$store.commit('setReassurance', reponse.data.acf.reassurance)
 
-          let ZoneReassurance = Home.acf.reassurance;
-          ZoneReassurance.forEach( (titre) => {
-            console.log("Icone :", titre.icn_reinsurance);
-            console.log("Titre :", titre.title_reinsurance);
-            console.log("Texte :", titre.text_reinsurance);
-            console.log("ESPACE");
-          });
+          setTimeout( () => {
+            this.$store.state.reassurance
+          }, 2000)
         });
     },
   },
 };
 </script>
 <style lang="scss">
+
 //Partie pc
+
+.c-reassurance{
+    
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+
+    @include small-down() {
+        flex-direction:column;
+        align-items: center;
+        background-color: white;
+        margin: 20% 0 20% 0;
+        font-style:$bodyFontSizeM;
+    }
+
+    &__main{
+        display:flex;
+        flex-direction:row;
+        @include small-down() {
+            border: 0.5rem solid $bleuSecond;
+            flex-direction:column;
+            align-items: center;
+            width: 80%;
+            padding: 15% 0 15% 0;
+        }
+    }
+
+     &__rea{
+        display:flex;
+        flex-direction:column;
+        width: 25%;
+        align-items: center;
+        @include small-down() {
+            width:75%;
+            padding-bottom:10%;
+        }
+    }
+
+    &__iconerea{
+        width: pxToRem(150);
+        height: pxToRem(150);
+        @include medium-only() {
+            width:35%;
+            height:65%;
+        } 
+        @include small-down(){
+            width:9.375rem;
+            height:9.375rem;
+        }
+    }
+
+    &__textrea{
+        font-size: $bodyFontSize;
+        line-height:pxToRem(25);
+        text-align:center;
+        margin:0;
+    }
+
+    &__waves{
+        display: none;
+        @include small-down() {
+            width:50%;
+            position: absolute;
+            margin-top:-11%;
+            display:flex;
+        }
+    }
+}
 
 .custom {
   width: 85%;
