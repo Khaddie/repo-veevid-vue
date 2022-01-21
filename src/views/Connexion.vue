@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button v-if="$store.state.user.authToken" @click="$store.commit('removeUser')">Déconnexion</button>
     <form @submit="submit">
       <div>
         <label for="username">Nom utilisateur</label>
@@ -21,15 +22,15 @@
       <p style="color: red;">{{ errorMessage }}</p>
     </div>
 
-
     <form @submit="submitShoe">
       <p>JE CREE </p>
       <div>
-        <label for="$store.state.user.displayName">Modèle</label>
-        <input id="$store.state.user.displayName" v-model="$store.state.user.displayName" type="text" >
+        <label for="displayName">Modèle</label>
+        <input id="displayName" v-model="form.username" type="text">
       </div>
       <input type="submit" value="submit">
     </form>
+    
   </div>
 </template>
 
@@ -58,8 +59,9 @@ export default {
         password: this.form.password
       }).then(response => {
         if (response.status === 200) {
-          this.success = true
+          console.log(response)
           this.$store.commit('setUser', {
+            userid: response.data.data.id,
             username: response.data.data.displayName,
             email: response.data.data.email,
             authToken: response.data.data.token,
@@ -72,22 +74,23 @@ export default {
         this.success = false
       })
     },
-    submitShoe(screen){
+    submitShoe(screen) {
       axios.post('https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/shoes',
           {
-            "status":"publish",
-            "title":this.$store.state.user.displayName,
+            "status": "publish",
+            "title": this.$store.state.user.displayName,
           },
           {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${this.$store.state.user.authToken}`,
             }
-          }).then(response =>{
-            if (response.status===200){
- console.log("ok ca marche")
-            }
-      })      }
+          }).then(response => {
+        if (response.status === 200) {
+          console.log("ok ca marche")
+        }
+      })
+    }
 
 
   }

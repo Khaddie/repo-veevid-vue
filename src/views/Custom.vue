@@ -1,6 +1,7 @@
 <template>
+  <div>
   <!---Section custom taille-->
-  <section class="custom">
+  <div class="custom">
     <div class="row">
       <div class="col-12 col-md-4 col-l-4">
         <h2>Veevid | Vee One Nawaka</h2>
@@ -513,6 +514,8 @@
       </div>
     </div>
 
+  </div>
+
     <!--Zone de réassurance-->
 
     <div>
@@ -536,6 +539,76 @@
 
 
   <!---Fin Section custom taille-->
+    <section>
+      <div class="_SectionImage">
+        <div class="_SectionTexteImage">
+          <div class="__SectionTexte">
+            <p>Ta paire Vee ONE NAWAKA </p>
+            <p>DISPONIBLE </p>
+            <p><strong>EN PRE-COMMANDE!</strong></p>
+            <p>LANCEMENT <strong class="_SectionTexteCouleur">LE 5 MARS 2022</strong></p>
+          </div>
+          <div class="__SectionImage"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="c-shoes">
+      <div class="col-l-6">
+        <img src="@/assets/img/shoes.jpg" alt="">
+      </div>
+      <div class="c-shoes__text col-l-6">
+       <h2>Vee one Nawaka, ta paire de sneakers personnalisable selon tes envies ! </h2>
+
+        <p>
+          Vee One Nawaka est une paire unisexe désigné spécialement par Veevid. C’est le résultat
+          de 2 années de conception et développement, crée par des designers spécialisés dans la sneaker.
+          Fait à partir de matériaux résistants, les Vee One Nawaka se veulent comfortables et ajustées au pied de l’utilisateur.</p>
+          <br>
+          <br>
+
+          <p>Fabriqué en Espagne, nous prônons la transparence sur la provenance de nos produits. Tous nos produits proviennent d’Europe.</p>
+
+        <button class="button-txt -secondary ">
+          <router-link to="/about">
+            En savoir plus sur la marque
+          </router-link>
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="c-insta">
+      <div class="c-insta__text">
+        <h2 class="title -tag">
+          <span>Taggez-nous !</span>
+        </h2>
+        <p>#veevidCOMMUNITY</p>
+        <b>Accéder à Instagram</b>
+      </div>
+      <div class="c-gallerie">
+        <div>
+          <img src="@/assets/img/cadeau1.png" alt="">
+
+        </div>
+        <div>
+          <img src="@/assets/img/cadeau1.png" alt="">
+
+        </div>
+        <div>
+          <img src="@/assets/img/cadeau1.png" alt="">
+        </div>
+        <div>
+          <img src="@/assets/img/cadeau1.png" alt="">
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
 
 
 
@@ -618,6 +691,66 @@ export default {
 };
 </script>
 <style lang="scss">
+
+
+.c-gallerie{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: pxToRem(20);
+  padding: 0;
+  img{
+    width: 90%;
+
+  }
+}
+.c-insta{
+  margin: 10%;
+  h3{
+    font-size: pxToRem(20);
+  }
+
+  p{
+    font-size: pxToRem(36);
+    margin: 10px 0;
+    letter-spacing: pxToRem(1);
+  }
+  b{
+    color:$orange;
+    font-weight: bold;
+  }
+}
+
+
+.c-shoes{
+
+button{
+  margin-top: 5%;
+}
+  display: flex;
+  flex-direction: row;
+  margin:10%;
+
+  &__text{
+    align-self: center;
+margin-left: 5%;
+    p{
+      font-size: $bodyFontSize;
+      line-height: pxToRem(25);
+    }
+  }
+
+  img{
+    width: 100%;
+    float: right;
+  }
+  h2{
+    font-size: pxToRem(36);
+    font-weight: 900;
+    float: right;
+    margin-bottom: 5%;
+  }
+}
 
 //Partie pc
 
