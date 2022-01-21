@@ -27,6 +27,9 @@
        font-size: pxToRem(36);
        line-height: pxToRem(36);
     }
+  &.-tag{
+    font-size: pxToRem(30);
+  }
  
     &.-huge {
        font-size: pxToRem(60);

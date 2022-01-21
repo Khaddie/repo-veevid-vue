@@ -27,8 +27,15 @@
               <button class="button-txt">Contactez-nous</button>
             </li>
           </router-link>
+          <router-link to="/newformshoes">
+            <li>
+              <button class="button-txt">SHOES</button>
+            </li>
+          </router-link>
+          <router-link to="/profil">
+          <li><img src="@/assets/icons/ico-heart-empty.svg" alt=""></li>
+          </router-link>
 
-          <li><a href=""> <img src="@/assets/icons/ico-heart-empty.svg" alt=""></a></li>
           <router-link to="/register">
           <li><a href=""> <img src="@/assets/icons/ico-profil.svg" alt=""></a></li>
           </router-link>

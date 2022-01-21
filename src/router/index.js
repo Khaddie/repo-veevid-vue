@@ -6,7 +6,7 @@ import Home from '@/views/Home.vue'
 import About from '../views/About.vue'
 import CGU from '../views/CGU.vue'
 import CGV from '../views/CGV.vue'
-import Compte from '../views/Compte.vue'
+import Profil from "@/components/Profil";
 import Concours from '../views/Concours.vue'
 import Contact from '../views/Contact.vue'
 import Custom from '../views/Custom.vue'
@@ -16,8 +16,8 @@ import Mentions from '../views/Mentions.vue'
 import Plan from '../views/Plan.vue'
 import Register from "@/components/Register";
 import Connexion from "@/views/Connexion";
-
-
+import NewformShoes from "@/components/NewformShoes";
+import NotFound from "@/components/NotFound";
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,9 +25,15 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },{
+  },
 
+  {
+    path: '/newformshoes',
+    name: 'NewformShoes',
+    component: NewformShoes
+  },
 
+  {
     path: '/about',
     name: 'About',
     component:About
@@ -43,9 +49,9 @@ const routes = [
     component : CGV
   },
   {
-    path: '/mon-compte',
-    name: 'Compte',
-    component : Compte
+    path: '/profil',
+    name: 'Profil',
+    component : Profil
   },
   {
     path: '/concours',
@@ -91,6 +97,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component : Register
+  },
+  {
+    path:'*',
+    name:'NotFound',
+    component: NotFound
   }
 ]
 
