@@ -1,5 +1,45 @@
 <template>
 <div>
+    <!-- ZONE TITRE TXT -->
+    <div class="intro"> 
+        <!-- SCSS disponible en bas du fichier -->
+        <h1 class="intro__title">
+            <span>A propos</span>
+        </h1>
+        <p class="intro__txt">Veevid est une marque de chaussure streetwear unisexe basée à Montbéliard. Fondée en 2021 par Khadija Boudjemline, Camélia Siong, Khaly Thiam et Mathilde Vauquieres d’un intérêt commun pour l’univers de la sneakers et de la mode.</p>
+        <p class="intro__txt">Avec la volonté de réunir le prêt-à-porter et l’unicité de chaque pièce, les créateurs de Veevid désirent proposer aux personnes avec un style unique la possibilité d’exprimer leur personnalité à travers des chaussures créées sur mesure.</p>
+    </div>
+
+    <!-- ZONE IMG TXT -->
+    <section class="zone_imgtxt">
+        <!-- Image + wave -->
+        <div class="zone_imgtxt__img">
+          <img class="zone_imgtxt__photo" src="@/assets/img/apropos.png">
+          <img class="zone_imgtxt__waves" src="@/assets/draw/waves1.png">
+        </div>
+        <!-- Texte + bouton -->
+        <div class="zone_imgtxt__right">
+            <div class="zone_imgtxt__txt">
+                <p class="imgtxt_txt">Veevid est une petite équipe de 5 personnes travaillant à plein temps dans ses bureaux à Montbéliard.</p>
+                <p class="imgtxt_txt">Nos produits sont fabriqués dans les usines d’Eisenach en Allemagne. Des visites régulières sont organisées pour toujours améliorer la qualité et le confort de nos chaussures. </p>
+                <p class="imgtxt_txt">Sur le plan stylistique, les sneakers Veevid permettent à leur porteurs d’adopter leur propre style tout en étant très distinctif. Leur durabilité et leur confort les rendent idéales pour la vie de tous les jours comme pour les grandes occasions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANDEAU CTA CONCOURS -->
+    <div class="c-concoursaccueil">
+        <img src="@/assets/draw/flower.png" alt="">
+        <p class="c-concoursaccueil__titre">Jeu Concours</p>
+        <p class="c-concoursaccueil__hashtag">#VeevidCustom</p>
+        <p class="c-concoursaccueil__text">Avis aux sneakers addict : une paire de Vee One Nawaka personnalisée <br>à ton goût à remporter pour une paire achetée ! </p>
+        <button class="button-txt -secondary -concours ">
+            <router-link to="/jeu-concours">
+            <p class="c-concoursaccueil__text -lien">En savoir plus</p>
+            </router-link>
+        </button>
+    </div>
+
     <!-- BOUTON FIXE -->
     <button class="button-fixed">
         <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,4 +111,60 @@ export default {
 
 <style lang="scss">
  
+.intro{
+    max-width: 768px;
+    text-align: center;
+    margin: 6% auto;
+    display: block;
+    @media screen and (max-width: 780px) {
+        max-width: 500px;
+    }
+    @media screen and (max-width: 520px) {
+        max-width: 320px;
+    }
+    &__title{
+        text-transform: uppercase;
+        line-height: pxToRem(45);
+        color: $gris;
+        position: relative;
+        display: inline-block;
+        font-weight: 800;
+        span {
+            position: relative;
+            z-index: 2;
+            font-size: pxToRem(45);
+            font-family: $font;
+            @include small-down() {
+                font-size: pxToRem(25);
+            }
+        }
+        // TRAIT BLEU
+        &::before {
+            content: "";
+            width: 100%;
+            height: pxToRem(10);
+            background-color: $bleuMain;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -5;
+        }
+    }
+    &__txt{
+        margin: pxToRem(24) 0px;
+        line-height: pxToRem(24);
+        color: $gris;
+        font-size: pxToRem(18);
+        &:nth-of-type(2){
+            margin-bottom: 0px;
+        }
+        @include small-down() {
+            font-size: pxToRem(14);
+            line-height: pxToRem(20);
+        }
+    }
+}
+
+
 </style>  
