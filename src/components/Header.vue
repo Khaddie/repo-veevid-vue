@@ -10,6 +10,40 @@
         <img src="@/assets/logo/Logo_base.svg">
       </router-link>
       </div>
+      <nav>
+        <button class="menubtn" v-on:click="menuclick">
+      <span>
+      </span>
+        </button>
+        <div class="menu" style="display: none" ref="menu" v-on:click="menuclick">
+          <div class="image">
+            <div data-project-no="1" class="item item--1 w-100" style=" opacity: 1; z-index: 89;">
+              <img class="imgmenu w-100" src="" alt="Portfolio Khadija Boudjemline">
+            </div>
+          </div>
+          <div class="list">
+            <ul v-on:click="fermeture">
+              <router-link to="/Logofolio">
+                <li>Logofolio</li>
+              </router-link>
+              <router-link to="/Sitesweb">
+                <li ref="fermli">Sites Web</li>
+              </router-link>
+              <router-link to="/Creations">
+                <li>Créations graphiques</li>
+              </router-link>
+              <router-link to="/Apropos">
+                <li>À propos</li>
+              </router-link>
+
+              <router-link to="/Contact">
+                <li>Contact</li>
+              </router-link>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       <nav class="nav">
 
         <ul class="c-header__list">
