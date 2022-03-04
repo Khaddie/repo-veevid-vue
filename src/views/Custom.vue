@@ -456,7 +456,7 @@
               </div>
             </div>
             <div class="col-12 col-md-4 col-l-2">
-              <form @submit="" action="">
+              <form action="">
                 <p style="margin: 9px; font-weight: 700; font-size: 17px">
                   Couleur
                 </p>
@@ -535,8 +535,6 @@
             </div>
     </section>
 
-  </section>
-
 
   <!---Fin Section custom taille-->
     <section>
@@ -552,7 +550,7 @@
         </div>
       </div>
     </section>
-
+  
 
     <div class="c-shoes">
       <div class="col-l-6">
