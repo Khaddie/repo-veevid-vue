@@ -187,7 +187,7 @@
 .form{
     display: flex;
     flex-direction: column;
-    margin:auto;
+    margin:0 10%;
     @include small-down(){
         width: auto;
         margin: 3rem 0.5rem;

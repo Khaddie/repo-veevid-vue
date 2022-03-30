@@ -6,10 +6,10 @@
       </div>
       <button @click="saveShoeHandler">Sauvegarder ma chaussure</button>
     </div>
-
     <p v-if="shoeCreated" style="color: #42b983;">Ta chaussure est créé ! Tu peux la voir
       <router-link to="/compte">ICI</router-link>
     </p>
+    <p v-if="user.displayName==null">marche pas </p>
 
   </div>
 </template>
@@ -26,6 +26,11 @@ export default {
       shoeCreated: false,
       error: false,
     }
+  },
+  computed: {
+    user() {
+      return this.$store.state.user
+    },
   },
   methods: {
     saveShoeHandler() {
@@ -51,7 +56,6 @@ export default {
      * @param {file} image - Image file
      */
     sendImageToWPMediaLibrary(image) {
-
       axios.post('https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/media', image,
           {
             headers: {
@@ -74,7 +78,10 @@ export default {
               // HOWEVER that's not really the good way to do it, but hey, it works balec
               this.createShoe(response.data.source_url)
             }
-          })
+          }).catch(error=>{
+
+            alert("Veuillez vous connecter")
+      })
     },
     /**
      * Create/Save the shoe as a Post type Shoe
