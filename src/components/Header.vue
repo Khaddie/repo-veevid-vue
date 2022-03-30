@@ -1,6 +1,5 @@
 <template>
 <div>
-
   <div class="menurespon" ref="root">
     <div class="iconmobile">
       <div class="logo">
@@ -14,12 +13,17 @@
         </router-link>
       </div>
       <div class="icoo2">
+        <router-link to="/profil">
+          <img v-if="$store.state.user.authToken != null" src="@/assets/icons/ico-profil.svg" alt="">
+        </router-link>
+      </div>
+      <div class="icoo2">
         <router-link to="/connexion">
-          <img src="@/assets/icons/ico-profil.svg" alt="">
+          <img v-if="$store.state.user.authToken == null" src="@/assets/icons/ico-profil.svg" alt="">
         </router-link>
       </div>
       <div class="icoo3">
-        <router-link to="/">
+        <router-link to="/custom">
           <img src="@/assets/icons/ico-basket-empty.svg" alt="">
         </router-link>
       </div>
@@ -58,31 +62,6 @@
       </div>
     </nav>
   </div>
-
-
-   <!--<div class="menumob">
-     <div class="menubtn" v-on:click="menuclick" >
-       <img src="@/assets/icons/menu.png" alt="" />
-     </div>
-     <div class="menubtn" v-on:click="menuclick" >
-       <img src="@/assets/logo/Logo_base.svg" alt="" />
-     </div>
-   </div>
-  </div>
-  <div class="listmobile" ref="menu" v-on:click="menuclick">
-
-    <div>
-      <ul class="listmenu" v-on:click="fermeture">
-        <li>Vee One Nawaka</li>
-
-        <li>Il était une fois Veevid</li>
-
-        <li>Jeu concours</li>
-
-        <li>Contactez-nous</li>
-      </ul>
-    </div>
-  </div>-->
   <header class="header" id="header">
     <nav class="navbar container">
       <router-link to="/">
@@ -115,9 +94,14 @@
               <img src="@/assets/icons/ico-heart-empty.svg" alt="">
             </router-link>
           </li>
+          <li class="menu-item">
+            <router-link to="/profil">
+              <img v-if="$store.state.user.authToken != null" src="@/assets/icons/ico-profil.svg" alt="">
+            </router-link>
+          </li>
           <li class="menu-item ">
             <router-link to="/connexion">
-              <img src="@/assets/icons/ico-profil.svg" alt="">
+              <img v-if="$store.state.user.authToken == null" src="@/assets/icons/ico-profil.svg" alt="">
             </router-link>
           </li>
           <li class="menu-item ">
@@ -129,72 +113,32 @@
       </div>
     </nav>
   </header>
-    <!--<header class="c-header">
-      <p>Bonjour,{{user.displayName}}</p>
-      <button v-if="$store.state.user.authToken" @click="$store.commit('removeUser')">Déconnexion</button>
-      <div class="c-header__logo">
-      <router-link to="/">
-        <img src="@/assets/logo/Logo_base.svg">
-      </router-link>
-      </div>
-
-      <div ref="root">
-        <div class="menubtn" v-on:click="menuclick" >
-          <img src="@/assets/icons/menu.png" alt="" />
-        </div>
-      </div>
-
-
-
-      <nav class="nav" >
-
-        <ul class="c-header__list" >
-          <router-link to="/custom">
-            <li>Vee One Nawaka </li>
-          </router-link>
-          <router-link to="/about">
-            <li>Il était une fois Veevid</li>
-          </router-link>
-          <router-link to="/concours">
-            <li>Jeu concours</li>
-          </router-link>
-          <router-link to="/contact">
-            <li>
-              <button class="button-txt">Contactez-nous</button>
-            </li>
-          </router-link>
-          <router-link to="/newformshoes">
-            <li>
-              <button class="button-txt">SHOES</button>
-            </li>
-          </router-link>
-          <router-link to="/profil">
-          <li><img src="@/assets/icons/ico-heart-empty.svg" alt=""></li>
-          </router-link>
-
-          <router-link to="/connexion">
-          <li><a href=""> <img src="@/assets/icons/ico-profil.svg" alt=""></a></li>
-          </router-link>
-          <router-link to="/connexion">
-          <li><a href=""> <img src="@/assets/icons/ico-basket-empty.svg" alt=""></a></li>
-          </router-link>
-        </ul>
-      </nav>
-    </header>-->
-
-
 </div>
 </template>
 
 <script>
 
+import axios from "axios";
+
 export default {
   name: "Header",
+  data() {
+    return {
+      form: {
+        username: null,
+        password: null,
+      },
+      success: false,
+      error: false,
+      errorMessage: null
+    }
+  },
   computed: {
     user() {
       return this.$store.state.user
     },
   },
+
   methods: {
     menuclick: function (event) {
       if (this.$root.$el.classList.toggle('menu-open')) {
@@ -207,6 +151,29 @@ export default {
     this.$refs["menup"].style.display = 'none';
 
   },
+    submit(event) {
+      event.preventDefault()
+      axios.post('https://veevid.khadijaboudjemline.fr/wp-json/jwt-auth/v1/token', {
+        username: this.form.username,
+        password: this.form.password
+      }).then(response => {
+        if (response.status === 200) {
+          console.log(response)
+          this.$store.commit('setUser', {
+            userid: response.data.data.id,
+            username: response.data.data.displayName,
+            email: response.data.data.email,
+            authToken: response.data.data.token,
+          })
+          console.log(response)
+        }
+      }).catch(error => {
+        console.log('Error LOG : ', error)
+        this.error = true
+        this.success = false
+      })
+    }
+
 }
 }
 </script>
@@ -578,6 +545,13 @@ a{
     position: absolute;
     top: 45px;
     right: 42%;
+    z-index: 999;
+  }
+
+  .icooo{
+    position: absolute;
+    top: 45px;
+    right: 45%;
     z-index: 999;
   }
 

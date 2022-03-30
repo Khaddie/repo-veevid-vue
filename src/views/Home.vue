@@ -323,7 +323,7 @@
     </section>
     <!-- FIN ZONE NEWSLETTER -->
 
-    <Footer />
+    <Footer  />
   </div>
 </template>
 

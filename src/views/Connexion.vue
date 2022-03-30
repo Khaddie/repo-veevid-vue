@@ -1,20 +1,27 @@
 <template>
+
   <div>
+    <div v-if="$store.state.user.authToken != null" class="welcome">
+      <p>Bonjour,{{user.displayName}}</p>
+      <button class="button-txt" v-if="$store.state.user.authToken" @click="$store.commit('removeUser')">Déconnexion</button>
+    </div>
     <div class="englo">
-      <div class="c-connexion col-l-7 col-12">
+      <div v-if="$store.state.user.authToken == null"   class="c-connexion col-l-7 col-12">
         <h1 class="title">Connecte-toi !</h1>
-        <p>Connecte-toi pour pouvoir <br>commander ta paire ! </p>
+        <p >Connecte-toi pour pouvoir <br>commander ta paire ! </p>
         <div class="c-connexion__contenu ">
-          <form class="formco" @submit="submit">
+          <form  class="formco" @submit="submit">
             <div class="inputchamp">
               <input placeholder="Ton identifiant" id="username" type="text" v-model="form.username">
             </div>
             <div class="inputchamp">
               <input placeholder="Ton mot de passe" type="password" id="password" v-model="form.password">
             </div>
+            <h3 class="inscrip">Pas encore inscrit ? <router-link to="/register"><strong>Inscris-toi !</strong></router-link></h3>
 
             <input class="button-txt" type="submit" value="Je me connecte !">
           </form>
+
         </div>
 
 
@@ -59,6 +66,11 @@ export default {
       errorMessage: null
     }
   },
+  computed: {
+    user() {
+      return this.$store.state.user
+    },
+  },
 
   methods: {
     submit(event) {
@@ -91,6 +103,16 @@ export default {
 
 <style lang="scss">
 
+
+.welcome{
+  text-align: center;
+  font-size: pxToRem(24);
+  margin-top: 20%;
+
+  button{
+    margin-top: 10%;
+  }
+}
 .shoesco {
   position: absolute;
   left: 50%;
@@ -102,6 +124,12 @@ export default {
   }
 }
 
+.inscrip{
+  font-size: pxToRem(16);
+  font-weight: bold;
+  color: $orange;
+  margin: 3% 0;
+}
 
 
 .englo {
