@@ -2,7 +2,6 @@
             <div class="mentions">
                 <h2 class="mentions_mltitre title -tiny">{{ donnees.acf.title_cgu }}</h2>
                 <p class="mentions_mltexte"> {{ donnees.acf.text_cgu }} </p>
-
                
                 <Footer />
             </div>
