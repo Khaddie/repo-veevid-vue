@@ -16,6 +16,7 @@
     "lottie-web-vue": "^1.2.1",
     "sass": "^1.46.0",
     "sass-loader": "^10.1.1",
+    "three": "^0.139.0",
     "vue": "^2.6.11",
     "vue-axios": "^3.4.0",
     "vue-flickity": "^1.2.1",
