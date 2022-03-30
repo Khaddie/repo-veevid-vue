@@ -540,9 +540,10 @@
         <div class="blob-canvas">
             <LottieAnimation 
             ref='anim'
-            :animationData="require('@/assets/lottie/intro-2.json')"
+            :animationData="require('@/assets/lottie/circle.json')"
             :loop='true'
             :autoPlay='true'
+            :fr='10'
             />
         </div>
       </div>
@@ -786,12 +787,11 @@ export default {
 
   .col-l-6 {
     position: relative;
-
     .blob-canvas {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 100%;
+      width: 120%;
       transform: translate(-50%, -50%);
 
     }
