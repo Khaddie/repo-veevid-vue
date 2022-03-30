@@ -143,6 +143,10 @@ export default {
 
   .inputchamp{
     width: 50%;
+
+    @include small-down(){
+      width: 100%;
+    }
    input{
      border-radius: pxToRem(10);
      border: 0.7px $orange solid;
@@ -164,7 +168,7 @@ export default {
   input[type="submit"] {
     margin-top: pxToRem(10);
     @include small-down() {
-      width: 10%;
+      width: auto;
       margin-top: pxToRem(20);
     }
   }

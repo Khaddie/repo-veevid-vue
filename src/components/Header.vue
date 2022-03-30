@@ -9,12 +9,12 @@
         </router-link>
       </div>
       <div class="icoo">
-        <router-link to="/">
+        <router-link to="/newformshoes">
           <img src="@/assets/icons/ico-heart-empty.svg" alt="">
         </router-link>
       </div>
       <div class="icoo2">
-        <router-link to="/">
+        <router-link to="/connexion">
           <img src="@/assets/icons/ico-profil.svg" alt="">
         </router-link>
       </div>
