@@ -40,6 +40,7 @@
                     </svg>
                     </button>
             </form>
+
         <div class="localisation">
             <iframe class="localisation_carte" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.9220170254875!2d6.793923815869195!3d47.51090990257629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479216e5a7704daf%3A0x49625157ea3f395a!2s37%20Rue%20Georges%20Clemenceau%2C%2025200%20Montb%C3%A9liard!5e0!3m2!1sfr!2sfr!4v1648409081758!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="localisation_loctexte">
@@ -84,6 +85,9 @@
             </button>
             </div>
         </section>
+
+
+
         </section>
         <!-- FIN ZONE NEWSLETTER -->
 
@@ -110,7 +114,8 @@
                 titre: "",
                 reassurance: [],
                 },
-            }
+            },
+            
         };             
     },
 
@@ -141,7 +146,7 @@
 
         if (!localStorage.getItem("messages")) {
             localStorage.setItem("messages", JSON.stringify([]));
-        }
+        } 
 
         const messages = JSON.parse(localStorage.getItem("messages"));
         const { name, surname, email, message } = this;
@@ -153,7 +158,9 @@
         });
 
         localStorage.setItem("messages", JSON.stringify(messages));
-        },
+
+    
+        }
     },
 
      created() {
@@ -222,10 +229,10 @@
 
 .input{
     width: 100%;
-    border-radius: 5px;
-    border-color: $orange;
+    border-radius: pxToRem(10);
+    border: 0.7px $orange solid;
+   
     padding:0.5rem;
-    border:0.15rem solid $orange;
 }
 
 .inputmessage{

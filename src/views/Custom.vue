@@ -578,35 +578,35 @@
         <a href="#"><b>Accéder à Instagram</b></a>
       </div>
 
-      <flickity class="flickity " ref="flickity" :options="flickityOptions">
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
+      <section class="zone_imgtxt__bloc" > 
+      
+            <flickity class="flickity " ref="flickity" :options="flickityOptions"> 
+                               
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/insta1.png" alt="" />
+                </div>
 
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/insta2.png" alt="" />
+                </div>
 
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/insta3.png" alt="" />
+                </div>
 
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/insta4.png" alt="" />
+                </div>
 
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
-
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
-        
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
-      </flickity>
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/insta5.png" alt="" />
+                </div>
+                
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/insta6.png" alt="" />
+                </div>
+            </flickity>
+        </section>
 
     </section>
     <!-- FIN ZONE INSTAGRAM -->

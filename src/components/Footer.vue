@@ -23,28 +23,30 @@
               <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.2118 0H1.78327C1.34867 0 0.997559 0.345312 0.997559 0.772727V16.2273C0.997559 16.6547 1.34867 17 1.78327 17H22.2118C22.6464 17 22.9976 16.6547 22.9976 16.2273V0.772727C22.9976 0.345312 22.6464 0 22.2118 0ZM21.2297 2.67557V15.2614H2.76542V2.67557L2.08774 2.15639L3.05269 0.936932L4.10359 1.74105H19.894L20.9449 0.936932L21.9098 2.15639L21.2297 2.67557ZM19.894 1.73864L11.9976 7.77557L4.10113 1.73864L3.05024 0.934517L2.08528 2.15398L2.76296 2.67315L11.1505 9.08679C11.3917 9.27109 11.6884 9.37113 11.9939 9.37113C12.2993 9.37113 12.5961 9.27109 12.8373 9.08679L21.2297 2.67557L21.9074 2.15639L20.9424 0.936932L19.894 1.73864Z" fill="#333333"/>
               </svg>
-              <a href="#">Contacte-nous</a>
+              <router-link to="/contact"> Contacte-nous</router-link>
             </button>
             </li>
 
           </ul>
           <ul class="col-2-md col-1-sm">
             <li>
-              À propos
+                À propos
             </li>
+
             <li>
-              <p>Accueil</p>
+              <router-link to="/">Accueil</router-link>
             </li>
+
             <li>
-              <p>Vee One Nawaka</p>
+              <router-link to="/custom">Vee One Nawaka</router-link>
             </li>
+
             <li>
-              <p>Il était une fois Veevid</p>
-            </li>
-            <li>
-              <p>Nawaka</p>
+              <router-link to="/about">Il était une fois Veevid</router-link>
             </li>
           </ul>
+
+
           <ul class="col-4-md col-1-sm ">
             <li><img src="./../assets/logo/Logo_base.svg" alt=""></li>
 
@@ -52,25 +54,35 @@
           <ul class="col-2-md col-1-sm">
             <li>Mais aussi</li>
             <li>
-              <p>Mon compte</p>
+              <router-link to="/connexion">Mon compte</router-link>
             </li>
             <li>
-              <p>Blog</p>
+              <router-link to="/">Blog</router-link>
             </li>
             <li>
-              <p>FAQ</p>
+              <router-link to="/">FAQ</router-link>
             </li>
           </ul>
+
           <ul class="col-2-md col-1-sm">
-            <li>Service Client</li>
             <li>
               <p>Livraison et retours</p>
             </li>
+
             <li>
-              <p>CGV</p>
+              <router-link to="/mentions-legales">Mentions Légales</router-link>
             </li>
+
             <li>
-              <p>CGU</p>
+              <router-link to="/conditions-generales-de-ventes">CGV</router-link>
+            </li>
+
+            <li>
+              <router-link to="/conditions-generales-utilisation">CGU</router-link>
+            </li>
+
+            <li>
+              <router-link to="/plan-du-site">Plan du site</router-link>
             </li>
           </ul>
         </div>

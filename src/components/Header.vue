@@ -560,7 +560,5 @@ a{
     display: block;
   }
 }
-#app > div:nth-child(2) > section.c-concoursaccueil{
-  display: none;
-}
+
 </style>
