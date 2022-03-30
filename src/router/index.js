@@ -112,19 +112,4 @@ const router = new VueRouter({
     routes
 })
 
-
-axios.get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7")
-    .then(function (reponse) {
-        let Home = reponse.data
-        console.log(Home);
-
-        let ZoneReassurance = Home.acf.reassurance;
-        ZoneReassurance.forEach(function (titre) {
-            console.log("Icone :", titre.icn_reinsurance)
-            console.log("Titre :", titre.title_reinsurance)
-            console.log("Texte :", titre.text_reinsurance)
-            console.log("ESPACE");
-        })
-    })
-
 export default router

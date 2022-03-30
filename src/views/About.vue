@@ -4,10 +4,10 @@
     <div class="intro"> 
         <!-- SCSS disponible en bas du fichier -->
         <h1 class="intro__title">
-            <span>A propos</span>
+            <span>{{ donnees.acf.title_about }}</span>
         </h1>
-        <p class="intro__txt">Veevid est une marque de chaussure streetwear unisexe basée à Montbéliard. Fondée en 2021 par Khadija Boudjemline, Camélia Siong, Khaly Thiam et Mathilde Vauquieres d’un intérêt commun pour l’univers de la sneakers et de la mode.</p>
-        <p class="intro__txt">Avec la volonté de réunir le prêt-à-porter et l’unicité de chaque pièce, les créateurs de Veevid désirent proposer aux personnes avec un style unique la possibilité d’exprimer leur personnalité à travers des chaussures créées sur mesure.</p>
+        <p class="intro__txt">{{ donnees.acf.text_presentation }}</p>
+        <p class="intro__txt">{{ donnees.acf.text_presentation2 }}</p>
     </div>
 
     <!-- ZONE IMG TXT -->
@@ -20,25 +20,26 @@
         <!-- Texte + bouton -->
         <div class="zone_imgtxt__right">
             <div class="zone_imgtxt__txt">
-                <p class="imgtxt_txt">Veevid est une petite équipe de 5 personnes travaillant à plein temps dans ses bureaux à Montbéliard.</p>
-                <p class="imgtxt_txt">Nos produits sont fabriqués dans les usines d’Eisenach en Allemagne. Des visites régulières sont organisées pour toujours améliorer la qualité et le confort de nos chaussures. </p>
-                <p class="imgtxt_txt">Sur le plan stylistique, les sneakers Veevid permettent à leur porteurs d’adopter leur propre style tout en étant très distinctif. Leur durabilité et leur confort les rendent idéales pour la vie de tous les jours comme pour les grandes occasions.</p>
+                <p class="imgtxt_txt">{{ donnees.acf.text_histoire }}</p>
+                <p class="imgtxt_txt">{{ donnees.acf.text_histoire2 }}</p>
+                <p class="imgtxt_txt">{{ donnees.acf.text_histoire3 }}</p>
             </div>
         </div>
     </section>
 
-    <!-- BANDEAU CTA CONCOURS -->
-    <div class="c-concoursaccueil">
-        <img src="@/assets/draw/flower.png" alt="">
-        <p class="c-concoursaccueil__titre">Jeu Concours</p>
-        <p class="c-concoursaccueil__hashtag">#VeevidCustom</p>
-        <p class="c-concoursaccueil__text">Avis aux sneakers addict : une paire de Vee One Nawaka personnalisée <br>à ton goût à remporter pour une paire achetée ! </p>
-        <button class="button-txt -secondary -concours ">
-            <router-link to="/jeu-concours">
-            <p class="c-concoursaccueil__text -lien">En savoir plus</p>
-            </router-link>
-        </button>
-    </div>
+    <!-- ZONE CONCOURS -->
+    <section class="c-concoursaccueil">
+      <img src="@/assets/draw/flower.png" alt="" />
+      <p class="c-concoursaccueil__titre">{{ donnees.acf.title_concours }}</p> 
+      <p class="c-concoursaccueil__hashtag">#{{ donnees.acf.subtitle_concours }}</p>
+      <p class="c-concoursaccueil__text"> {{ donnees.acf.text_concours }} </p>
+      <button class="button-txt -secondary -concours">
+        <router-link to="/jeu-concours">
+          <p class="c-concoursaccueil__textb -lien">{{ donnees.acf.button_more }}</p>
+        </router-link>
+      </button>
+    </section>
+    <!-- FIN ZONE CONCOURS -->
 
     <!-- BOUTON FIXE -->
     <button class="button-fixed">
@@ -63,51 +64,101 @@
     <!-- VALEURS PAGE A PROPOS -->
     <section class="nos-valeurs">
         <div class="title-valeurs">
-            <h2 class="title -tiny">Nos valeurs</h2> 
+            <h2 class="title -tiny">{{ donnees.acf.title_valeurs }}</h2> 
         </div>
         <section class="c-valeurs">
             <div class="row">
                 <div class="col-12 col-md-6 c-valeurs__col">
                     <div class="c-valeur">
                         <div class="c-valeur__content">
-                            <h3 class="c-valeur__title">TRANSPARENCE</h3>
-                            <p class="c-valeur__text">Veevid tient à rester transparent sur la provenance de tous ses produits. La marque veut permettre à ses clients d’acheter en toute conscience en respectant leur éthique et leurs valeurs. Nos chaussures sont toutes produites en Europe et leurs composants sont importés d’Asie dans le respect du commerce équitable. </p>
+                            <h3 class="c-valeur__title">{{ donnees.acf.subtitle_transparence }}</h3>
+                            <p class="c-valeur__text">{{ donnees.acf.text_transparence }}</p>
                         </div> 
                     </div>
                     <div class="c-valeur">
                         <div class="c-valeur__content">
-                            <h3 class="c-valeur__title">QUALITÉ</h3>
-                            <p class="c-valeur__text"> Une grande attention est porté sur la qualité et les détails de nos produits. Chaque paire personnalisées passe dans des machines contrôlées régulièrement dans nos usines situés à Eisenach. </p>
+                            <h3 class="c-valeur__title">{{ donnees.acf.subtitle_genderless }}</h3>
+                            <p class="c-valeur__text"> {{ donnees.acf.text_genderless }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 c-valeurs__col">
                     <div class="c-valeur">
                         <div class="c-valeur__content">
-                            <h3 class="c-valeur__title">GENDERLESS</h3>
-                            <p class="c-valeur__text">Veevid propose des chaussures sans différenciation de genre. Il n’y a aucune limite dans la création de chaussures personnalisées chez Veevid. La marque veut que ses utilisateurs se sentent libre dans leur créativité. </p>
+                            <h3 class="c-valeur__title">{{ donnees.acf.subtitle_share }}</h3>
+                            <p class="c-valeur__text">{{ donnees.acf.text_share }}</p>
                         </div>
                     </div>
                     <div class="c-valeur">
                         <div class="c-valeur__content">
-                            <h3 class="c-valeur__title">PARTAGE</h3>
-                            <p class="c-valeur__text">Veevid veut partage le style unique de ses clients en proposant des looks et inspirations pour toujours plus de créations. En plus des posts instagram, la marque se veut généreuse en proposant régulièrement concours et codes promo. </p>
+                            <h3 class="c-valeur__title">{{ donnees.acf.subtitle_quality }}</h3>
+                            <p class="c-valeur__text">{{ donnees.acf.text_qualite }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </section>
-</div>
+    <!-- FIN VALEURS PAGE A PROPOS -->
 
-<!-- FIN VALEURS PAGE A PROPOS -->
+    <!-- ZONE NEXSLETTER -->
+    <section>
+        <img class="newsletter-img" src="@/assets/draw/newsletter_fond2.png">
+        <img class="newsletter-img_mobile" src="@/assets/draw/newsletter_fond_mobile.png">
+
+        <section class="c-newsletter">
+            <div class="c-newsletter__left">
+                <h2 class="c-newsletter__h2"> {{ donnees.acf.titile }} </h2>
+                <p class="c-newsletter__text"> {{donnees.acf.text_newsletter}} </p>
+            </div>
+
+            <div class="c-newsletter__right"> 
+                <input class="c-newsletter__input" type="text" id="name" name="name" placeholder="Ton petit prénom" >
+                <input class="c-newsletter__input" type="text" id="name" name="name" placeholder="Et une adresse-mail ;)" size="35">
+                <button class="button-txt c-newsletter__btn">
+                    <a href="#">{{donnees.acf.button_Newsletter}}</a>
+                </button>
+            </div>
+        </section>
+    </section>
+    <!-- FIN ZONE NEWSLETTER --> 
+
+    <Footer />
+
+</div>
 </template>
 
 <script>
+import Footer from "@/components/Footer";
 export default {
-    name: "About"
-}
+  name: "About",
+  components: { Footer },
+  data() {
+    return {
+      donnees: {
+          acf: {
+             
+          }
+      },
+    };
+  },
+
+  created() {
+    axios
+      .get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/136")
+      .then(
+        function (response) {
+          console.log("LOG ICI", response.data);
+          this.donnees = response.data;
+        }.bind(this)
+      )
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+};
 </script>
+
 
 <style lang="scss">
  
@@ -165,6 +216,97 @@ export default {
         }
     }
 }
+
+// Zone Newsletter
+
+.newsletter-img{
+    width:100%;
+    height:auto;
+    margin-bottom:-1%;
+        @include  small-down() {
+            display:none;
+        }
+}
+
+.newsletter-img_mobile{
+    width:100%;
+    height:auto;
+    margin-bottom:-1%;
+        @include medium-up() {
+            display:none;
+        }
+}
+
+.c-newsletter{
+    display: flex;
+    flex-direction: row;
+    padding: 0 15rem 5rem 15rem;
+    background-color: $beige;
+    @include  small-down() {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 2rem 3rem 5rem 3rem;
+    }
+
+    &__text{
+        font-size:15px;
+        line-height: 1.8rem;
+        @include  small-down() {
+            margin: 0;
+        }
+    }
+
+    &__h2{
+        font-size:26px;
+        font-weight:800;
+        margin-bottom:2rem;
+        
+    }
+
+    &__right{
+        width:50%;
+        margin: 0 8rem 0 0rem;
+        display:flex;
+        flex-direction: column;
+        align-items:flex-end;
+        @include  small-down() {
+            flex-direction:column;
+            width:100%;
+            margin:0;
+        }
+
+    }
+    &__left{
+        width:50%;
+        margin: 0 8rem 0 8rem;
+        @include  small-down() {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__input{
+        padding:0.2rem 0.5rem 0.2rem 1.2rem;
+        height: 2rem;
+        width:85%;
+        margin-top: 1.5rem;
+        border: 0px;
+        @include  small-down() {
+            width:100%;
+        }
+    }
+
+    &__btn{
+        width:10rem;
+        margin-top: 1.5rem;
+        @include  small-down() {
+
+        }
+    }
+}
+
+//fin Zone Newsletter
+
 
 
 </style>  

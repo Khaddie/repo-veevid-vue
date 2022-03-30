@@ -3,15 +3,11 @@
     <div class="c-presentation">
       <div class="c-presentation__texte col-l-5 col-12">
         <h1 class="title -huge">{{ donnees.acf.titre }}</h1>
-        <h1 class="title -huge">dans l’air !</h1>
-        <p>
-          Découvre la paire Veevid fraîchement crée pour allier ta personnalité
-          et ton style ! Disponible uniquement en pré-commande, personnalise tes
-          futures baskets à ton image.
-        </p>
+        <h1 class="title -huge">{{ donnees.acf.titre1 }}</h1>
+        <p> {{ donnees.acf.subtitle }} </p> 
 
         <button class="button-txt-arrow -present">
-          <a href="#">Je personnalise !</a>
+          <a href="#">{{ donnees.acf.button_perso }}</a>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
             <path
               class="pointe"
@@ -21,8 +17,9 @@
             <rect class="barre" y="6.364" width="18" height="2" fill="#333" />
           </svg>
         </button>
+
         <button class="button-txt-arrow -secondary -present">
-          <a href="#">Découvrir</a>
+          <a href="#">{{ donnees.acf.button_discovering }}</a> 
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
             <path
               class="pointe"
@@ -33,29 +30,27 @@
           </svg>
         </button>
       </div>
+      
       <div class="c-presentation__shoes col-l-7 col-12">
-        <img src="./../assets/shoes/sneaker2.png" alt="" />
+        <img src="@/assets/shoes/sneaker2.png"/>
       </div>
     </div>
 
     <!--Presentation 2 pour mobile -->
     <div class="c-presentation2">
       <div class="c-presentation__titre">
-        <h1 class="title -huge">Il y a du nouveau</h1>
-        <h1 class="title -huge">dans l’air !</h1>
+        <h1 class="title -huge">{{ donnees.acf.titre }}</h1>
+        <h1 class="title -huge">{{ donnees.acf.titre1 }}</h1>
         <div class="c-presentation2__shoes col-l-7 col-12">
-          <img src="./../assets/shoes/sneaker2.png" alt="" />
+          <img :src="donnees.acf.img_shoe.url" alt="" />
         </div>
       </div>
 
       <div class="c-presentation2__texte">
-        <p>
-          Découvre la paire Veevid <br />fraîchement crée pour allier <br />ta
-          personnalité et ton style !
-        </p>
+        <p>{{ donnees.acf.subtitle }}</p>
 
         <button class="button-txt-arrow -present -buttonmob">
-          <a href="#">Je personnalise !</a>
+          <a href="#">{{ donnees.acf.button_perso }}</a>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
             <path
               class="pointe"
@@ -66,7 +61,7 @@
           </svg>
         </button>
         <button class="button-txt-arrow -secondary -present -buttonmob">
-          <a href="#">Découvrir</a>
+          <a href="#">{{ donnees.acf.button_discovering }}</a>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
             <path
               class="pointe"
@@ -109,187 +104,278 @@
       <a href="#">ma paire !</a>
     </button>
 
+    <!-- BANDEAU PRECOMMANDE -->
     <section>
-      <div class="_SectionImage">
-        <div class="_SectionTexteImage">
-          <div class="__SectionTexte">
-            <p>Ta paire Vee ONE NAWAKA</p>
-            <p>DISPONIBLE</p>
-            <p><strong>EN PRE-COMMANDE!</strong></p>
-            <p>
-              LANCEMENT
-              <strong class="_SectionTexteCouleur">LE 5 MARS 2022</strong>
-            </p>
+      <div class="bandeau">
+        <div class="bandeau_TexteImage">
+          <div class="bandeau_Texte">
+            <p class="bandeau_bold">{{ donnees.acf.title_banner }}</p>
+            <p class="bandeau_bold">{{ donnees.acf.title2_banner }}</p>
+            <p class="bandeau_boldb">{{ donnees.acf.title_banner3 }}</p>
+            <p class="bandeau_TexteCouleur">{{ donnees.acf.subtitle_banner }}</p>
           </div>
-          <div class="__SectionImage"></div>
+          <div class="bandeau_Image"></div>
         </div>
       </div>
     </section>
+    <!-- FIN BANDEAU PRECOMMANDE -->
 
-    <div class="c-box">
-      <div class="c-box__cadeau col-l-8">
-        <h4>On a un petit cadeau pour toi !</h4>
-        <p>
-          Plonge dans l’univers Veevid avec la boîte à chaussures en édition
-          limitée pour les 200 premières pré-commandes. Elle sera ajoutée
-          automatiquement à ta commande une fois ton achat validé. Rien de plus
-          facile ! Fabriquées en matériaux recyclés, Veevid souhaite te proposer
-          des sneakers uniques et de qualité accompagnés de leur boîte pensée
-          pour la planète.
-        </p>
-        <button class="button-txt-arrow -secondary">
-          <a href="#">En savoir plus</a>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
-            <path
-              class="pointe"
-              d="M19.082,6.657a1,1,0,0,1,0,1.414l-6.364,6.364A1,1,0,1,1,11.3,13.021l5.657-5.657L11.3,1.707A1,1,0,1,1,12.718.293Z"
-              fill="#333"
-            />
-            <rect class="barre" y="6.364" width="18" height="2" fill="#333" />
-          </svg>
-        </button>
-        <div>
-          <div class="c-box__cadeau col-l-2">
-            <img src="@/assets/img/cadeau1.png" alt="" />
-          </div>
+    <!-- ZONE BOITE -->
+    <section class="c-box">
+        <div class="c-box_div">
+            <img class="c-box_stamp" src="@/assets/draw/stamp.png">
+
+            <div class="c-box_cadeau">
+                <h4 class="c-box_title title -tiny">{{ donnees.acf.titlebox_h3 }}</h4>
+                <p class="c-box_texte"> {{ donnees.acf.text_box }} </p>
+
+                <button class="button-txt-arrow -secondary">
+                    <a href="#">{{ donnees.acf.button_preorder }} </a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
+                        <path
+                        class="pointe"
+                        d="M19.082,6.657a1,1,0,0,1,0,1.414l-6.364,6.364A1,1,0,1,1,11.3,13.021l5.657-5.657L11.3,1.707A1,1,0,1,1,12.718.293Z"
+                        fill="#333"
+                        />
+                        <rect class="barre" y="6.364" width="18" height="2" fill="#333" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
-        <div class="c-box__cadeau col-l-2">
-          <img src="@/assets/img/cadeau2.jpg" alt="" />
+        <div  class="c-box_img">
+            <img class="c-box_img1" :src="donnees.acf.img_box1.url" alt="" />
+            <img class="c-box_img2" :src="donnees.acf.img_box2.url" alt="" />
         </div>
-      </div>
-    </div>
 
-    <div class="c-concoursaccueil">
+    </section>
+    <!-- FIN ZONE BOITE -->
+
+    <!-- ZONE CONCOURS -->
+    <section class="c-concoursaccueil">
       <img src="@/assets/draw/flower.png" alt="" />
-      <p class="c-concoursaccueil__titre">Jeu Concours</p>
-      <p class="c-concoursaccueil__hashtag">#VeevidCustom</p>
-      <p class="c-concoursaccueil__text">
-        Avis aux sneakers addict : une paire de Vee One Nawaka personnalisée
-        <br />à ton goût à remporter pour une paire achetée !
-      </p>
+      <p class="c-concoursaccueil__titre">{{ donnees.acf.title_concours }}</p> 
+      <p class="c-concoursaccueil__hashtag">#{{ donnees.acf.subtitle_concours }}</p>
+      <p class="c-concoursaccueil__text"> {{ donnees.acf.text_concours }} </p>
       <button class="button-txt -secondary -concours">
         <router-link to="/jeu-concours">
-          <p class="c-concoursaccueil__text -lien">En savoir plus</p>
+          <p class="c-concoursaccueil__textb -lien">{{ donnees.acf.button_more }}</p>
         </router-link>
       </button>
-    </div>
+    </section>
+    <!-- FIN ZONE CONCOURS -->
 
-    <!-- ------- Zone de réassurance ------- -->
+    <!-- ZONE DE REASURANCE -->
+    <section class="zone_imgtxt">
+      <div class="zone_imgtxt__img">
+        <img class="zone_imgtxt__photo" src="@/assets/img/reassurance.png" />
+        <img class="zone_imgtxt__waves" src="@/assets/draw/waves1.png" />
+      </div>
 
-        <section class="zone_imgtxt">
-
-        <div class="zone_imgtxt__img">
-          <img class="zone_imgtxt__photo" src="@/assets/img/reassurance.png">
-          <img class="zone_imgtxt__waves" src="@/assets/draw/waves1.png">
+      <div class="zone_imgtxt__main">
+        <div class="zone_imgtxt__sousmain1">
+          <section
+            v-for="(reassurance, index) in donnees.acf.reassurance.slice(0, 2)"
+            :key="reassurance.title_reinsurance"
+            class="zone_imgtxt__bloc"
+          >
+            <img
+              class="zone_imgtxt__iconerea1"
+              :src="require(`@/assets/icons/reassurance/${index}.png`)"
+              alt=""
+            />
+            <p class="zone_imgtxt__textreab">
+              {{ reassurance.title_reinsurance }}
+            </p>
+            <p class="zone_imgtxt__textrea">
+              {{ reassurance.text_reinsurance }}
+            </p>
+          </section>
         </div>
 
+        <div class="zone_imgtxt__sousmain2">
+          <section
+            v-for="(reassurance, index) in donnees.acf.reassurance.slice(2, 4)"
+            :key="reassurance.title_reinsurance"
+            class="zone_imgtxt__bloc"
+          >
+            <img
+              class="zone_imgtxt__iconerea1"
+              :src="require(`@/assets/icons/reassurance/${index + 2}.png`)"
+              alt=""
+            />
+            <p class="zone_imgtxt__textreab">
+              {{ reassurance.title_reinsurance }}
+            </p>
+            <p class="zone_imgtxt__textrea">
+              {{ reassurance.text_reinsurance }}
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- FIN ZONE DE REASSURANCE -->
 
-        <div class="zone_imgtxt__main">
-            <div class="zone_imgtxt__sousmain1">
-                <section v-for="(reassurance, index) in donnees.acf.reassurance.slice(0, 2)" :key="reassurance.title_reinsurance" class="zone_imgtxt__bloc">
-                    <img class="zone_imgtxt__iconerea1" :src="require(`@/assets/icons/reassurance/${index}.png`)" alt="">
-                    <p class="zone_imgtxt__textreab">{{reassurance.title_reinsurance}}</p>
-                    <p class="zone_imgtxt__textrea">{{reassurance.text_reinsurance}}</p>
+    <!-- ZONE INSTAGRAM -->
+    <section class="c-insta">
 
-                </section>
-            </div>
-
-            <div class="zone_imgtxt__sousmain2">
-                <section v-for="(reassurance, index) in donnees.acf.reassurance.slice(2, 4)" :key="reassurance.title_reinsurance" class="zone_imgtxt__bloc">
-                    <img class="zone_imgtxt__iconerea1" :src="require(`@/assets/icons/reassurance/${index + 2}.png`)" alt="">
-                    <p class="zone_imgtxt__textreab">{{ reassurance.title_reinsurance }}</p>
-                    <p class="zone_imgtxt__textrea">{{reassurance.text_reinsurance}} </p>
-                </section>
-          </div>
-
+        <div class="c-insta_text">
+            <h2 class="c-insta_tag title -tiny">
+            <span>{{ donnees.acf.title_h3 }}</span>
+            </h2>
+            <p class="c-insta_p">{{ donnees.acf.subtitle_insta }}</p>
+            <a href="#"><b>{{ donnees.acf.Link_insta }}</b></a>
         </div>
 
+        <div  :src="donnees.acf.galerie_insta.url">
+
+            <flickity class="flickity " ref="flickity" :options="flickityOptions"> 
+
+                <img :src="donnees.acf.galerie_insta.url" alt="" />
+                <img :src="donnees.acf.galerie_insta.url" alt="" />
+                <img :src="donnees.acf.galerie_insta.url" alt="" />
+                <img :src="donnees.acf.galerie_insta.url" alt="" />
+
+            </flickity>
+        </div>
+
+        <!-- <section v-for="(galerie_insta) in donnees.acf.galerie_insta" :key="galerie_insta.title" class="zone_imgtxt__bloc" > 
+      
+            <flickity class="flickity " ref="flickity" :options="flickityOptions"> 
+               
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" :src="donnees.acf.galerie_insta" alt="" />
+                </div>
+
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" :src="donnees.acf.galerie_insta" alt="" />
+                </div>
+
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" :src="donnees.acf.galerie_insta" alt="" />
+                </div>-->
+                
+
+                <!--<div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+                </div>
+
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+                </div>
+
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+                </div>
+
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+                </div>
+
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+                </div>
+                
+                <div class="carousel-cell">
+                <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+                </div>
+            </flickity>
+        </section>-->
+
+    </section>
+    <!-- FIN ZONE INSTAGRAM -->
+
+    <!-- ZONE NEWSLETTER -->
+    <section>
+      <img class="newsletter-img" src="@/assets/draw/newsletter_fond2.png" />
+      <img
+        class="newsletter-img_mobile"
+        src="@/assets/draw/newsletter_fond_mobile.png"
+      />
+
+      <section class="c-newsletter">
+        <div class="c-newsletter__left">
+          <h2 class="c-newsletter__h2">{{ donnees.acf.titile }}</h2>
+          <p class="c-newsletter__text">{{ donnees.acf.text_newsletter }}</p>
+        </div>
+
+        <div class="c-newsletter__right">
+          <input
+            class="c-newsletter__input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ton petit prénom"
+          />
+          <input
+            class="c-newsletter__input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Et une adresse-mail ;)"
+            size="35"
+          />
+          <button class="button-txt c-newsletter__btn">
+            <a href="#">{{ donnees.acf.button_Newsletter }}</a>
+          </button>
+        </div>
       </section>
+    </section>
+    <!-- FIN ZONE NEWSLETTER -->
 
-        
     <Footer />
-</div>
+  </div>
 </template>
 
-        
-           
- 
-
 <script>
+
 import Footer from "@/components/Footer";
+import Flickity from "vue-flickity";
+
 export default {
   name: "Home",
-  components: { Footer },
+  components: { Footer , Flickity },
+ 
   data() {
     return {
       donnees: {
-          acf: {
-              titre: '',
-              reassurance: []
-          }
+        acf: {
+          titre: "",
+          reassurance: [],
+          galerie_insta: []
+        },
+      },
+
+      flickityOptions: {
+        initialIndex: 7,
+        prevNextButtons: true,
+        contain: true,
+        wrapAround: true,
+        freeScroll: true,
       },
     };
   },
 
-  created() {
-    axios
-      .get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7")
-      .then(
-        function (response) {
-          console.log("LOG ICI", response.data);
-          this.donnees = response.data;
-        }.bind(this)
-      )
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
-};
+        created() {            
+            axios.get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/7")
+            .then(
+                function (response) {
+                console.log("LOG ICI", response.data);
+                this.donnees = response.data;
+                }.bind(this)
+            )
+            .catch(function (error) {
+                console.log(error);
+            });
+        },
+}
+    
 </script>
 
 
 <style lang="scss">
-.c-box {
-  display: flex;
-  flex-direction: row;
-  &__cadeau {
-    img {
-      width: 40%;
-    }
-  }
-}
-.button-txt {
-  &.-concours {
-    margin-top: pxToRem(10);
-  }
-}
-.c-concoursaccueil {
-  padding: 3%;
-  line-height: pxToRem(30);
 
-  text-align: center;
-  background-color: #fff1e2;
-
-  &__titre {
-    font-size: pxToRem(36);
-    font-weight: 800;
-  }
-  &__hashtag {
-    font-size: pxToRem(25);
-    line-height: pxToRem(50);
-  }
-  &__text {
-    font-size: pxToRem(18);
-
-    &.-lien {
-      font-weight: 700;
-    }
-  }
-  img {
-    width: 5%;
-  }
-}
+// Zone 1 
 .c-presentation2 {
   margin: pxToRem(10);
 
@@ -377,8 +463,187 @@ export default {
   }
 }
 
-// Zone de réassurance
+//Zone Bandeau Precommande
+.bandeau{
+    display: flex;
+    background-image: url("~@/assets/draw/pattern.png");
+    background-size: cover;
+    height: $section-h;
+    padding: 3rem 0;
+    @include small-down(){
+        margin: 10rem 0;
+        padding: 6rem 0;
+    }
+     
+    &_TexteImage{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        @include small-down(){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    } 
 
+    &_Texte{
+        text-align: center;
+        background: white;
+        width: 257px;
+        border: 5px solid #00ffe0;
+        border-radius: 30px 0px;
+        margin: auto;
+        padding: 1.5rem;
+        line-height: 1.5625rem; 
+    } 
+
+    &_bold{
+        font-weight:700;
+    }
+
+    &_boldb{
+        font-weight:900;
+        margin-bottom:2rem;
+    }
+
+    &_TexteCouleur{
+        color:$orange;
+        font-weight:900;
+    }
+    
+    &_Image{
+        background-image: url("~@/assets/draw/waves.png");
+        background-size: cover;
+        width: 140px;
+        height: 210px; 
+        @include small-down(){
+            width: 120px;
+            height: 180px;
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+// Zone Box
+.c-box {
+    display: flex;
+    flex-direction: row;
+    margin: 10rem 10rem;
+    justify-content: center;
+    @include small-down() {
+        display: flex;
+        flex-direction: column;
+        margin: 4rem 1rem;
+        justify-content: center;
+    }
+  
+    &_stamp{
+        width: 12%;
+        margin-bottom: 3rem;
+        padding-left: 3rem;
+        @include small-down (){
+            width: 20%;
+            margin-bottom: 1rem;
+            padding-left: 3rem;
+        }
+    }
+
+    &_cadeau {
+        padding: 0 3rem 0 3rem;
+        @include small-down (){
+            padding: 0 3rem 3rem 3rem;
+        }
+    }
+
+    &_div{
+        display: flex;
+        flex-direction: column;
+        width: 49%;
+        @include small-down (){
+            display: flex;
+            flex-direction: column;
+            width:auto;
+        }
+    }
+
+    &_title{
+        margin-bottom:3rem;
+    }
+
+    &_texte{
+        line-height: 1.5rem;
+        margin-bottom:3rem;
+    }
+
+    &_img{
+        display: flex;
+        flex-direction: row;
+        @include small-down (){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &_img1{
+        width: 50%;
+        margin-right: 2rem;
+        height:75%;
+        @include small-down (){
+            width: 75%;
+            margin-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &_img2{
+        width: 50%;
+        height:75%;
+        @include small-down (){
+            width: 75%;
+        }
+    }
+}
+
+// Zone Concours
+.c-concoursaccueil {
+  padding: 3%;
+  line-height: pxToRem(30);
+  @include small-down (){
+      padding: 3rem 0.5rem;
+  }
+
+  text-align: center;
+  background-color: #fff1e2;
+
+  &__titre {
+    font-size: pxToRem(36);
+    font-weight: 800;
+  }
+  &__hashtag {
+    font-size: pxToRem(25);
+    line-height: pxToRem(50);
+  }
+  &__text {
+    font-size: pxToRem(18);
+    margin:1rem 25rem 1rem 25rem;
+
+    &.-lien {
+      font-weight: 700;
+    }
+  }
+  img {
+    width: 5%;
+  }
+}
+.button-txt {
+  &.-concours {
+    margin-top: pxToRem(10);
+  }
+}
+
+// Zone de réassurance
 .zone_imgtxt {
   @include zone_imgtxt;
   &__main {
@@ -396,25 +661,25 @@ export default {
   &__iconerea1 {
     width: 10vw;
     height: auto;
-    margin:auto;
+    margin: auto;
     @include medium-only() {
-        width: 10vw;
-        height: auto;
+      width: 10vw;
+      height: auto;
     }
     @include small-down() {
-        width: pxToRem(120);
-        height: auto;
+      width: pxToRem(120);
+      height: auto;
     }
   }
 
-  &__textrea{
-      text-align: center;
+  &__textrea {
+    text-align: center;
   }
 
-    &__textreab{
-        font-weight: 700;
-        text-align: center;
-    }
+  &__textreab {
+    font-weight: 700;
+    text-align: center;
+  }
 
   &__sousmain1 {
     width: 65%;
@@ -445,14 +710,143 @@ export default {
   }
 }
 
-.imgrea {
-  width: 99%;
-  height: 2%;
-  position: absolute;
-  margin-top: 5%;
-  z-index: -2;
+// Zone Instagram
+.c-insta {
+    margin:5% 10% 2% 10%;
+
+    &_imggallerie {
+        width: 100%;
+    }
+
+    &_text{
+        margin-bottom:2rem;
+    }
+
+    &_p {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        letter-spacing: pxToRem(1);
+    }
+
+    b {
+        color: $orange;
+        font-weight: bold;
+    }
+}
+.carousel-cell {
+  width: 20%;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+    @include small-down(){
+        width:75%;
+      }
+}
+.flickity-viewport{
+    height:400px;
+    @include small-down(){
+        height:285px!important;
+    }
+}
+.flickity-prev-next-button.next{
+    right:-68px;
+    @include small-down(){
+        right:-25px;;
+    }
+}
+.flickity-prev-next-button.previous{
+    left:-68px;
+    @include small-down(){
+        left:-25px;;
+    }
+}
+.flickity-button{
+    background:$beige;
+    color:$orange;
+}
+.flickity-page-dots .dot{
+    background: $orange;
+}
+
+// Zone Newsletter
+.newsletter-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: -1%;
   @include small-down() {
     display: none;
   }
 }
+.newsletter-img_mobile {
+  width: 100%;
+  height: auto;
+  margin-bottom: -1%;
+  @include medium-up() {
+    display: none;
+  }
+}
+.c-newsletter {
+  display: flex;
+  flex-direction: row;
+  padding: 0 15rem 5rem 15rem;
+  background-color: $beige;
+  @include small-down() {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2rem 3rem 5rem 3rem;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 1.8rem;
+    @include small-down() {
+      margin: 0;
+    }
+  }
+
+  &__h2 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  &__right {
+    width: 50%;
+    margin: 0 8rem 0 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @include small-down() {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+    }
+  }
+  &__left {
+    width: 50%;
+    margin: 0 8rem 0 8rem;
+    @include small-down() {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__input {
+    padding: 0.2rem 0.5rem 0.2rem 1.2rem;
+    height: 2rem;
+    width: 85%;
+    margin-top: 1.5rem;
+    border: 0px;
+    @include small-down() {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    width: 10rem;
+    margin-top: 1.5rem;
+    @include small-down() {
+    }
+  }
+}
+
 </style>
