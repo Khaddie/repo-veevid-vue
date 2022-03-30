@@ -1,32 +1,4 @@
-section{
-    font-family: $font;
-    font-size: $bodyFontSize;
-    ._SectionImage{
-      display: flex;
-      background-image: url("~@/assets/draw/pattern.png");
-      background-size: cover;
-      height: $section-h;
-     
-    }
-    ._SectionTexteImage{
-        width: 80%;
-        margin: auto;
-        display: flex;
-    } 
-    .__SectionTexte{
-        @include  small-up-section;
-        line-height: pxToRem(25);
-        
-    } 
-    .__SectionImage{
-        background-image: url("~@/assets/draw/waves.png");
-        background-size: cover;
-        width: 100px;
-        height: 150px;
-        margin: 36px 150px; 
-        
-    }
-}
+
 @media screen and (max-width: $large) {
     section{
     ._SectionTexteImage{
