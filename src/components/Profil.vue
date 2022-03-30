@@ -1,12 +1,11 @@
 <template>
   <div>
-    <div class="profil">
-      <div v-if="shoes.length" class="shoes-list"></div>
-      <h1>Liste des chaussures</h1>
-      <div v-for="shoe in shoes" :key="shoe.id">
-      <img :src="shoe.acf.image_url" alt="">
-      </div>
-    </div>
+<div class="c-profil">
+  <h1 class="-tiny">Bienvenue sur ton compte {{user.displayName}}!</h1>
+  <button class="button-txt" v-if="$store.state.user.authToken" @click="$store.commit('removeUser')">Déconnexion</button>
+
+</div>
+
   </div>
 </template>
 
@@ -14,20 +13,47 @@
 import axios from "axios";
 export default {
   name: "Profil",
-  data(){
-    return{
-      shoes:[],
+
+  data() {
+    return {
+      form: {
+        username: null,
+        password: null,
+      },
+      success: false,
+      error: false,
+      errorMessage: null
     }
   },
-  created() {
-    axios.get(`https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/shoes?author=${this.$store.state.user.id}`)
-        .then(response=>{
-          console.log(response.data);
-          this.shoes = response.data;
-        })
-        .catch(error=>{
-          console.log(error);
-        })
+  computed: {
+    user() {
+      return this.$store.state.user
+    },
+  },
+  methods: {
+    submit(event) {
+      event.preventDefault()
+      axios.post('https://veevid.khadijaboudjemline.fr/wp-json/jwt-auth/v1/token', {
+        username: this.form.username,
+        password: this.form.password
+      }).then(response => {
+        if (response.status === 200) {
+          console.log(response)
+          this.$store.commit('setUser', {
+            userid: response.data.data.id,
+            username: response.data.data.displayName,
+            email: response.data.data.email,
+            authToken: response.data.data.token,
+          })
+          console.log(response)
+        }
+      }).catch(error => {
+        console.log('Error LOG : ', error)
+        this.error = true
+        this.success = false
+      })
+    }
+
   }
 }
 
@@ -35,9 +61,14 @@ export default {
 </script>
 
 <style lang="scss">
-
-.profil{
+h1{
   text-align: center;
-display: flex}
+  font-size: pxToRem(18);
+}
+
+.c-profil{
+
+  margin-top: 10%;
+}
 
 </style>

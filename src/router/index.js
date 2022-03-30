@@ -18,7 +18,6 @@ import Register from "@/components/Register";
 import Connexion from "@/views/Connexion";
 import NewformShoes from "@/components/NewformShoes";
 import NotFound from "@/components/NotFound";
-
 Vue.use(VueRouter)
 
 const routes = [

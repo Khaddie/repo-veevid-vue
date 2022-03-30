@@ -93,7 +93,7 @@ footer {
         &__infos {
             text-align: center;
             font-size: pxToRem(12);
-
+            margin-bottom: pxToRem(15);
             @include medium-down(){
                 font-size: pxToRem(8);
                 .copyright {
