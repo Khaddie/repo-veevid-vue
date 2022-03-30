@@ -47,12 +47,8 @@
             <router-link to="/about">
               <li>Il était une fois Veevid</li>
             </router-link>
-            <router-link to="/contact">
-              <li>À propos</li>
-            </router-link>
 
             <router-link to="/Contact">
-
               <button class="button-txt-arrow">Contactez-nous</button>
             </router-link>
             <router-link to="/Contact">
@@ -575,13 +571,13 @@ a{
   .icoo2{
     position: absolute;
     top: 45px;
-    right: 30%;
+    right: 32%;
     z-index: 999;
   }
   .icoo3{
     position: absolute;
     top: 45px;
-    right: 38%;
+    right: 42%;
     z-index: 999;
   }
 

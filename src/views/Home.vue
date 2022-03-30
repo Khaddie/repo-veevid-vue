@@ -49,7 +49,7 @@
       <div class="c-presentation2__texte">
         <p>{{ donnees.acf.subtitle }}</p>
 
-        <button class="button-txt-arrow -present -buttonmob">
+        <button class="button-txt-arrow -present buttonmob">
           <a href="#">{{ donnees.acf.button_perso }}</a>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
             <path
@@ -60,7 +60,7 @@
             <rect class="barre" y="6.364" width="18" height="2" fill="#333" />
           </svg>
         </button>
-        <button class="button-txt-arrow -secondary -present -buttonmob">
+        <button class="button-txt-arrow -secondary -present buttonmob">
           <a href="#">{{ donnees.acf.button_discovering }}</a>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
             <path
@@ -377,6 +377,10 @@ export default {
 
 // Zone 1 
 .c-presentation2 {
+
+ .c-presentation2__texte > button{
+   margin: 0.5rem 0;
+ }
 
   &__texte {
     font-size: pxToRem(16);
