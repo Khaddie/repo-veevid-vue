@@ -333,15 +333,6 @@
             </flickity>
         </section>
 
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
-
-        <div class="carousel-cell">
-          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
-        </div>
-      </flickity>
-
     </section>
     <!-- FIN ZONE INSTAGRAM -->
 
