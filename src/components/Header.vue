@@ -10,20 +10,22 @@
         <ul class="menu-list">
           <li class="menu-item menu-link" >
               <router-link to="/custom">
-              <i class="menu-icon ion-md-home"></i>
               <span class="menu-name">Vee One Nawaka</span>
               </router-link>
           </li>
           <li class="menu-item">
             <router-link to="/concours">
-              <i class="menu-icon ion-md-search"></i>
               <span class="menu-name">Jeu concours</span>
             </router-link>
           </li>
           <li class="menu-item">
             <router-link to="/about">
-              <i class="menu-icon ion-md-cart"></i>
               <span class="menu-name">Il était une fois Veevid</span>
+            </router-link>
+          </li>
+          <li class="menu-item">
+            <router-link to="/contact">
+              <button class="button-txt-arrow">Contactez-nous</button>
             </router-link>
           </li>
           <li class="menu-item ">
@@ -144,7 +146,7 @@ export default {
 }
 #header{
   background: no-repeat url("~@/assets/draw/forme_header.svg");
-  background-position: right bottom -35%;
+  background-position: right bottom 30%;
   height: pxToRem(126);
   display: flex;
   justify-content: space-between;
@@ -252,7 +254,7 @@ a{
   .menu {
     &-list {
       justify-content: center;
-      column-gap: 3rem;
+      column-gap: 2rem;
     }
   }
 }

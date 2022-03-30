@@ -46,6 +46,8 @@
          <input type="submit" value="submit">
        </form>-->
     </div>
+    <Footer/>
+
   </div>
 </template>
 

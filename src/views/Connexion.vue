@@ -38,6 +38,8 @@
          <input type="submit" value="submit">
        </form>-->
     </div>
+    <Footer/>
+
   </div>
 </template>
 
@@ -108,6 +110,7 @@ export default {
   flex-direction: row;
   align-items: center;
   padding: 5%;
+  margin-top: 5%;
 
   @include small-down() {
     text-align: center;
