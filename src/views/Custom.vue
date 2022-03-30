@@ -32,8 +32,8 @@
                 <p><a href="#">Réinitialiser toute la customisation</a></p>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-l-5">
-                <div class="__icone">
+            <div class="col-12 col-md-4 col-l-6">
+              <!--  <div class="__icone">
                 <li class="wishlist" title="Ajouter à ma sélection" onclick="">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,36 +82,38 @@
                     </svg>
                 </li>
                 </div>
-                <img src="./../assets/draw/vue étape 2.png" alt="Chaussure" />
+                  -->
+              <canvas class="webgl"></canvas>
                 <div class="__3d">
                 <img src="./../assets/icons/ico-360.svg" alt="3d" />
-                <p>Chaussure entière</p>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-l-3">
-                <ul id="Menucustom">
-                <li class="Courantmenu Menuactive">
-                    <a href="#chaussure">Chaussure entière</a>
+            <div class="col-12 col-md-4 col-l-2">
+              <ul id="Menucustom" class="options">
+                <li class="option --is-active" data-option="Chaussure">
+                  Chaussure + Oeillet
                 </li>
-                <li class="Courantmenu"><a href="#bande">Bandes</a></li>
-                <li class="Courantmenu">
-                    <a href="#bandeLateral">Bandes latérales</a>
+                <li class="option" data-option="logo">
+                  logo
                 </li>
-                <li class="Courantmenu"><a href="#pointe">Pointe</a></li>
-                <li class="Courantmenu">
-                    <a href="#empeigne">Empeigne + Doublure</a>
+                <li class="option" data-option="doublure">
+                  Empeigne
                 </li>
-                <li class="Courantmenu"><a href="#oeillet">Oeillet</a></li>
-                <li class="Courantmenu">
-                    <a href="#languette">Languette arrière</a>
+                <li class="Courantmenu option" data-option="bordure">
+                  Bande
                 </li>
-                <li class="Courantmenu">
-                    <a href="#etiquette">Étiquette de languette</a>
+                <li class="option" data-option="languette">
+                  Languette
                 </li>
-                <li class="Courantmenu"><a href="#languette">Languette</a></li>
-                <li class="Courantmenu"><a href="#lacets">Lacets</a></li>
-                <li class="Courantmenu"><a href="#semelle">Semelle</a></li>
-                </ul>
+                <li class="option" data-option="lacet">
+                  Lacets
+                </li>
+
+                <li class="Courantmenu option" data-option="semelle">
+                  Semelle intérieur
+                </li>
+              </ul>
+
             </div>
             </div>
             <div class="_menucustom">
@@ -128,364 +130,87 @@
                 <div class="_texture courantCustom">
                 <li><a href="#texture">Texture</a></li>
                 </div>
-                <div class="_broderie courantCustom">
-                <li><a href="#broderie">Broderie</a></li>
-                </div>
+
             </div>
             </div>
-            <div class="slideCustom">
+          <div class="slideCustom">
             <div class="__taille customCourant" id="taille">
-                <div class="_taillecustom">
+              <div class="_taillecustom">
                 <ul>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">34</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">35</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">36</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">37</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">38</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">39</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">40</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">41</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">42</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">43</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">44</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
+                  </li>
+                  <li onclick="">
+                    <input type="radio" value="" name="seltaille">
                     <label data-value="" onclick="">45</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">46</label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">47</label>
-                    </li>
+                  </li>
+
                 </ul>
-                </div>
+              </div>
             </div>
             <div class="__couleur" id="couleur">
-                <div class="_couleurcustom">
-                <ul>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" id="couleur1" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" id="couleur2" />
-                    <label data-value="" onclick=""></label>
-                    </li>
-                </ul>
+              <div class="_couleurcustom">
+                <div  class="tray">
+                  <div class="js-tray-slide tray__slide couleur__slide"></div>
                 </div>
+              </div>
             </div>
             <div class="__motif" id="motif">
-                <div class="_motifcustom">
-                <ul>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_1.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_2.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_3.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_4.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_5.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_6.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_7.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_8.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_9.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_10.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_11.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_12.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_13.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/motif/motif_14.svg" alt="motif" />
-                    </label>
-                    </li>
-                </ul>
+              <div class="_motifcustom">
+                <div  class="tray">
+                  <div class="js-tray-slide tray__slide"><div class="tray__swatch" data-key="13" style="background-image: url(&quot;img/motif_1.jpg&quot;);"></div><div class="tray__swatch" data-key="14" style="background-image: url(&quot;img/motif_2.jpg&quot;);"></div><div class="tray__swatch" data-key="15" style="background-image: url(&quot;img/motif_3.jpg&quot;);"></div><div class="tray__swatch" data-key="16" style="background-image: url(&quot;img/motif_4.jpg&quot;);"></div><div class="tray__swatch" data-key="17" style="background-image: url(&quot;img/motif_5.jpg&quot;);"></div><div class="tray__swatch" data-key="18" style="background-image: url(&quot;img/motif_6.jpg&quot;);"></div><div class="tray__swatch" data-key="19" style="background-image: url(&quot;img/motif_7.jpg&quot;);"></div><div class="tray__swatch" data-key="20" style="background-image: url(&quot;img/motif_8.jpg&quot;);"></div><div class="tray__swatch" data-key="21" style="background-image: url(&quot;img/motif_9.jpg&quot;);"></div><div class="tray__swatch" data-key="22" style="background-image: url(&quot;img/motif_10.jpg&quot;);"></div><div class="tray__swatch" data-key="23" style="background-image: url(&quot;img/motif_11.jpg&quot;);"></div><div class="tray__swatch" data-key="24" style="background-image: url(&quot;img/motif_12.jpg&quot;);"></div><div class="tray__swatch" data-key="38" style="background-image: url(&quot;img/logo_.jpg&quot;);"></div></div>
                 </div>
+              </div>
             </div>
             <div class="__texture" id="texture">
-                <div class="_texturecustom">
-                <ul>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_1.svg" alt="texture" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_2.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_3.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_4.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_5.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_6.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_cuir_2.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_cuir_3.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_cuir_4.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_cuir_5.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" />
-                    <label data-value="" onclick="">
-                        <img src="./../assets/texture/texure_cuir_6.svg" alt="motif" />
-                    </label>
-                    </li>
-                    <li onclick="">
-                    <input type="radio" value="" name="seltaille" id="34" />
-                    <label onclick="">
-                        <img src="./../assets/texture/texure_cuir_7.svg" alt="motif" />
-                    </label>
-                    </li>
-                </ul>
+              <div class="_texturecustom">
+                <div  class="tray">
+                  <div class="js-tray-slide tray__slide"><div class="tray__swatch" data-key="25" style="background-image: url(&quot;img/texture_1.jpg&quot;);"></div><div class="tray__swatch" data-key="26" style="background-image: url(&quot;img/texture_2.jpg&quot;);"></div><div class="tray__swatch" data-key="27" style="background-image: url(&quot;img/texture_3.jpg&quot;);"></div><div class="tray__swatch" data-key="28" style="background-image: url(&quot;img/texture_4.jpg&quot;);"></div><div class="tray__swatch" data-key="29" style="background-image: url(&quot;img/texture_5.jpg&quot;);"></div><div class="tray__swatch" data-key="30" style="background-image: url(&quot;img/texture_6.jpg&quot;);"></div><div class="tray__swatch" data-key="31" style="background-image: url(&quot;img/texture_7.jpg&quot;);"></div><div class="tray__swatch" data-key="32" style="background-image: url(&quot;img/texture_8.jpg&quot;);"></div><div class="tray__swatch" data-key="33" style="background-image: url(&quot;img/texture_9.jpg&quot;);"></div><div class="tray__swatch" data-key="34" style="background-image: url(&quot;img/texture_10.jpg&quot;);"></div><div class="tray__swatch" data-key="35" style="background-image: url(&quot;img/texture_11.jpg&quot;);"></div><div class="tray__swatch" data-key="36" style="background-image: url(&quot;img/texture_12.jpg&quot;);"></div><div class="tray__swatch" data-key="37" style="background-image: url(&quot;img/texture_13.jpg&quot;);"></div></div>
                 </div>
+              </div>
             </div>
-            <div class="__broderie" id="broderie">
-                <div class="_broderieCustum">
-                <div class="row">
-                    <div class="col-12 col-md-4 col-l-4">
-                    <p>
-                        Personnalise ta paire de sneakers avec tes mots, sur l’arrière
-                        de la chaussure. Entre le nom que tu souhaites y inscrire et
-                        visualise-le en direct.
-                    </p>
-                    </div>
-                    <div class="col-12 col-md-4 col-l-6">
-                    <div class="row">
-                        <div class="col-l-6">
-                        <label for="name">Chaussure droite</label><br />
-                        <br />
-                        <input
-                            type="text"
-                            name="name"
-                            required
-                            maxlength="7"
-                            size="10"
-                        />
-                        </div>
-                        <div class="col-l-6">
-                        <label for="name">Chaussure gauche</label><br />
-                        <br />
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            maxlength="7"
-                            size="10"
-                        />
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-12 col-md-4 col-l-2">
-                    <form action="">
-                        <p style="margin: 9px; font-weight: 700; font-size: 17px">
-                        Couleur
-                        </p>
-                        <ul>
-                        <li onclick="">
-                            <input
-                            type="radio"
-                            value=""
-                            name="seltaille"
-                            id="couleurbroderie1"
-                            />
-                            <label for="name" data-value="" onclick=""></label>
-                        </li>
-                        <li onclick="">
-                            <input
-                            type="radio"
-                            value=""
-                            name="seltaille"
-                            id="couleurbroderie2"
-                            />
-                            <label for="name" data-value="" onclick=""></label>
-                        </li>
-                        </ul>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
+          </div>
             <div class="customDes">
             <h3 class="title -tiny">
                 <span>{{ donnees.acf.title_banner }}</span>
@@ -538,7 +263,7 @@
       <div class="col-l-6">
         <img src="@/assets/img/shoes.jpg" alt="" />
         <div class="blob-canvas">
-            <LottieAnimation 
+            <LottieAnimation
             ref='anim'
             :animationData="require('@/assets/lottie/circle.json')"
             :loop='true'
@@ -547,12 +272,12 @@
             />
         </div>
       </div>
-      
+
         <div class="c-shoes_text">
             <h2 class="c-shoes_titre">{{ donnees.acf.title_presentation }}</h2>
 
             <p class="c-shoes_p"> {{ donnees.acf.text_presentation }} </p>
-            
+
             <button class="c-shoes_button button-txt-arrow -secondary">
                 <router-link to="/about">{{ donnees.acf.link_more }} </router-link>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.246 14.728">
@@ -608,6 +333,15 @@
             </flickity>
         </section>
 
+        <div class="carousel-cell">
+          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+        </div>
+
+        <div class="carousel-cell">
+          <img class="c-insta_imggallerie" src="@/assets/img/cadeau1.png" alt="" />
+        </div>
+      </flickity>
+
     </section>
     <!-- FIN ZONE INSTAGRAM -->
 
@@ -636,9 +370,9 @@
 import LottieAnimation from 'lottie-web-vue';
 import Footer from "@/components/Footer";
     import Flickity from "vue-flickity";
-
+import Configurator from "../assets/script/Configurator"
 export default {
-  name: "Custom",    
+  name: "Custom",
     components: { Footer , Flickity, LottieAnimation },
 
     data() {
@@ -707,7 +441,7 @@ export default {
     }
     this.fetchData();
   },
-  
+
   computed: {
     reassurances() {
       return this.$store.state.reassurance;
@@ -727,11 +461,12 @@ export default {
             this.$store.state.reassurance;
           }, 2000);
         });
+      this.Configurator = new Configurator()
     },
-    
+
   },
 
-  created() {            
+  created() {
             axios.get("https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/pages/66")
             .then(
                 function (response) {
@@ -751,6 +486,126 @@ export default {
 
 
 <style lang="scss">
+.tray {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+.couleur__slide{
+  .tray__swatch {
+    &[data-key="13"] {
+      display: none;
+    }
+    &[data-key="14"] {
+      display: none;
+    }
+    &[data-key="15"] {
+      display: none;
+    }
+    &[data-key="16"] {
+      display: none;
+    }
+    &[data-key="17"] {
+      display: none;
+    }
+    &[data-key="18"] {
+      display: none;
+    }
+    &[data-key="19"] {
+      display: none;
+    }
+    &[data-key="20"] {
+      display: none;
+    }
+    &[data-key="21"] {
+      display: none;
+    }
+    &[data-key="22"] {
+      display: none;
+    }
+    &[data-key="23"] {
+      display: none;
+    }
+    &[data-key="24"] {
+      display: none;
+    }
+    &[data-key="25"] {
+      display: none;
+    }
+    &[data-key="26"] {
+      display: none;
+    }
+    &[data-key="27"] {
+      display: none;
+    }
+    &[data-key="28"] {
+      display: none;
+    }
+    &[data-key="29"] {
+      display: none;
+    }
+    &[data-key="30"] {
+      display: none;
+    }
+    &[data-key="31"] {
+      display: none;
+    }
+    &[data-key="32"] {
+      display: none;
+    }
+    &[data-key="33"] {
+      display: none;
+    }
+    &[data-key="34"] {
+      display: none;
+    }
+    &[data-key="35"] {
+      display: none;
+    }
+    &[data-key="36"] {
+      display: none;
+    }
+    &[data-key="37"] {
+      display: none;
+    }
+    &[data-key="38"] {
+      display: none;
+    }
+
+
+
+  }
+
+}
+
+.tray__swatch {
+  transition: 0.1s ease-in;
+  height: 50px;
+  min-width: 50px;
+  flex: 1;
+  border-radius: 30px;
+  margin: 0 4px;
+  background-size: cover;
+  background-position: center;
+
+
+}
+
+
+
+.tray__slide {
+  position: absolute;
+  display: flex;
+
+  /*   transform: translateX(-50%);
+animation: wheelin 1s 2s ease-in-out forwards; */
+
+}
 
 // ZONE INFO SHOES
 .c-shoes{
@@ -831,7 +686,7 @@ export default {
             padding: 15% 0 15% 0;
         }
         @include large-only() {
-            margin:0        
+            margin:0
         }
         @include medium-only() {
             margin:0
@@ -856,7 +711,7 @@ export default {
         @include medium-only() {
             width:100%;
         }
-        
+
 
     }
 
@@ -866,13 +721,13 @@ export default {
         @include large-only() {
             width:100%;
             height:auto;
-        } 
+        }
         @include small-down(){
             width: 7rem;
             height: 7rem;
         }
     }
-  
+
 
   &__textrea {
     font-size: $bodyFontSize;
@@ -916,10 +771,13 @@ export default {
     }
   }
 
-  .col-l-5 {
-    img {
-      width: 560px;
+  .col-l-6 {
+    canvas{
+      width: 100% !important;
+      height: 350px !important;
+
     }
+
 
     .__icone {
       padding-top: 20px;
@@ -967,7 +825,7 @@ export default {
     }
   }
 
-  .col-l-3 {
+  .col-l-2 {
     ul {
       font-size: $linkFontSizeOP;
       list-style: none;
@@ -993,9 +851,7 @@ export default {
         }
       }
 
-      .Menuactive {
-        padding: 8px;
-
+      .--is-active{
         &::before {
           @include customMenu;
           background-color: $bleuMain;
