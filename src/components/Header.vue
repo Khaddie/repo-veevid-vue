@@ -3,43 +3,43 @@
 
   <header class="header" id="header">
     <nav class="navbar container">
+      <router-link to="/">
       <img class="imgicon" src="@/assets/logo/Logo_base.svg">
+      </router-link>
       <div class="menu" id="menu">
         <ul class="menu-list">
-          <li class="menu-item">
-            <a href="#" class="menu-link is-active">
+          <li class="menu-item menu-link" >
+              <router-link to="/custom">
               <i class="menu-icon ion-md-home"></i>
-              <span class="menu-name">Home</span>
-            </a>
+              <span class="menu-name">Vee One Nawaka</span>
+              </router-link>
           </li>
           <li class="menu-item">
-            <a href="#" class="menu-link">
+            <router-link to="/concours">
               <i class="menu-icon ion-md-search"></i>
-              <span class="menu-name">Search</span>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="#" class="menu-link">
-              <i class="menu-icon ion-md-cart"></i>
-              <span class="menu-name">Cart</span>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="#" class="menu-link">
-              <i class="menu-icon ion-md-heart"></i>
-              <span class="menu-name">Favorite</span>
-            </a>
+              <span class="menu-name">Jeu concours</span>
+            </router-link>
           </li>
           <li class="menu-item">
             <router-link to="/about">
-              <i class="menu-icon ion-md-contact"></i>
-              <span class="menu-name">Account</span>
+              <i class="menu-icon ion-md-cart"></i>
+              <span class="menu-name">Il était une fois Veevid</span>
             </router-link>
           </li>
           <li class="menu-item ">
-            <a href="#" class="menu-link">
+            <router-link to="/newformshoes">
+              <img src="@/assets/icons/ico-heart-empty.svg" alt="">
+            </router-link>
+          </li>
+          <li class="menu-item ">
+            <router-link to="/connexion">
               <img src="@/assets/icons/ico-profil.svg" alt="">
-            </a>
+            </router-link>
+          </li>
+          <li class="menu-item ">
+            <router-link to="/connexion">
+              <img src="@/assets/icons/ico-basket-empty.svg" alt="">
+            </router-link>
           </li>
         </ul>
       </div>
@@ -140,7 +140,7 @@ export default {
 </script>
 <style lang="scss">
 .imgicon{
-  width: 10%;
+  width: 45%;
 }
 #header{
   background: no-repeat url("~@/assets/draw/forme_header.svg");
@@ -155,13 +155,6 @@ export default {
     display: none;
   }
 }
-.menu-name{
-  font-weight: 700;
-}
-
-
-
-
 // Elements
 .container {
   max-width: 75rem;
@@ -190,8 +183,15 @@ export default {
   margin: 0 auto;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+  font-weight: 900;
+  font-family: $font;
+}
+
 .menu {
-  position: fixed;
+/*  position: fixed;
   left: 0;
   bottom: 0;
   display: grid;
@@ -202,7 +202,7 @@ export default {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   background: var(--color-white);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-medium);*/
 
   &-list {
     display: flex;
@@ -217,7 +217,6 @@ export default {
     justify-content: center;
     border: none;
     outline: none;
-    color: var(--color-black);
 
     &.is-active {
       position: relative;
@@ -234,12 +233,8 @@ export default {
 
   &-name {
     display: none;
-    font-family: inherit;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.25;
-    visibility: hidden;
-    text-transform: capitalize;
+    font-family: $font;
+    font-weight: 600;
   }
 }
 

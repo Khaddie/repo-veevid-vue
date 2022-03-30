@@ -5,11 +5,11 @@
         <h1 class="title">Connecte-toi !</h1>
         <p>Connecte-toi pour pouvoir <br>commander ta paire ! </p>
         <div class="c-connexion__contenu ">
-          <form @submit="submit">
-            <div>
+          <form class="formco" @submit="submit">
+            <div class="inputchamp">
               <input placeholder="Ton identifiant" id="username" type="text" v-model="form.username">
             </div>
-            <div>
+            <div class="inputchamp">
               <input placeholder="Ton mot de passe" type="password" id="password" v-model="form.password">
             </div>
 
@@ -91,17 +91,16 @@ export default {
 
 .shoesco {
   position: absolute;
-  left: 60%;
-
+  left: 50%;
+  img {
+    width: 80%;
+  }
   @include small-down() {
     display: none;
   }
 }
 
-img {
 
-  width: 50%;
-}
 
 .englo {
   display: flex;
@@ -122,6 +121,10 @@ img {
 }
 
 .c-connexion {
+
+  &__contenu{
+
+  }
   p {
     margin: pxToRem(10) 0;
     font-size: pxToRem(16);
@@ -133,24 +136,32 @@ img {
 
 }
 
-form {
-  width: 50%;
+.formco{
+
+  .inputchamp{
+    width: 50%;
+   input{
+     border-radius: pxToRem(10);
+     border: 0.7px $orange solid;
+   }
+  }
+
   justify-content: center;
   @include small-down() {
     width: 100%;
   }
 
   input {
-    padding: 5%;
-    width: 50%;
-    text-align: center;
+    padding: pxToRem(20);
+
     margin-bottom: pxToRem(5);
+    text-align: left;
   }
 
   input[type="submit"] {
     margin-top: pxToRem(10);
     @include small-down() {
-      width: 100%;
+      width: 10%;
       margin-top: pxToRem(20);
     }
   }

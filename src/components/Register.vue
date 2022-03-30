@@ -8,14 +8,14 @@
         <h1 class="title">Inscris-toi !</h1>
         <p>Inscris-toi pour faire parti de la #veevidfamily ! </p>
         <div class="c-connexion__contenu ">
-          <form @submit="submit">
-            <div>
+          <form class="formco" @submit="submit">
+            <div class="inputchamp">
               <input placeholder="Ton identifiant" id="username" type="text" v-model="form.username">
             </div>
-            <div>
+            <div class="inputchamp">
               <input placeholder="Ton e-mail" type="email" id="email" v-model="form.email">
             </div>
-            <div>
+            <div class="inputchamp">
               <input placeholder="Ton mot de passe" type="password" id="password" v-model="form.password">
             </div>
 
