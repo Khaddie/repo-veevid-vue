@@ -2,10 +2,25 @@
 <div>
 
   <div class="menurespon" ref="root">
-    <div>
+    <div class="iconmobile">
       <div class="logo">
         <router-link to="/">
           <img src="@/assets/logo/Logo_base.svg" alt="Logo Khadija Boudjemline">
+        </router-link>
+      </div>
+      <div class="icoo">
+        <router-link to="/">
+          <img src="@/assets/icons/ico-heart-empty.svg" alt="">
+        </router-link>
+      </div>
+      <div class="icoo2">
+        <router-link to="/">
+          <img src="@/assets/icons/ico-profil.svg" alt="">
+        </router-link>
+      </div>
+      <div class="icoo3">
+        <router-link to="/">
+          <img src="@/assets/icons/ico-basket-empty.svg" alt="">
         </router-link>
       </div>
     </div>
@@ -14,6 +29,7 @@
       <span>
       </span>
       </button>
+
       <div class="menuo" style="display: none" ref="menu" v-on:click="menuclick">
         <div class="image">
           <div data-project-no="1" class="item item--1 w-100" style=" opacity: 1; z-index: 89;">
@@ -374,6 +390,7 @@ a{
 
 .menu-open nav::before {
   transform: scale(50);
+  z-index: 3;
 }
 .menuo ul {
   list-style: none;
@@ -539,10 +556,34 @@ a{
   }
 
   .logo img{
-    width: 25%;
-    margin: 13% 5%;
+    width: 30%;
+    margin: 15% -18%;
   }
 
+  .iconmobile{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+  }
+
+.icoo{
+  position: absolute;
+  top: 45px;
+  right: 22%;
+  z-index: 999;
+}
+  .icoo2{
+    position: absolute;
+    top: 45px;
+    right: 30%;
+    z-index: 999;
+  }
+  .icoo3{
+    position: absolute;
+    top: 45px;
+    right: 38%;
+    z-index: 999;
+  }
 
   display: none;
   @include small-down(){

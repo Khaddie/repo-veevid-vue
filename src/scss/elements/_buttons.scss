@@ -90,7 +90,7 @@
     }
     //Fin des deux boutons accueil du dessus //
     @include button-base;
-    padding: pxToRem(18) 0 pxToRem(18) pxToRem(18); //haut,droite,bas,gauche
+    padding: pxToRem(18) ;//haut,droite,bas,gauche
     font-size: $boutonHomeFontSize;
     @include transition;
     @include button-a-main;
@@ -284,7 +284,7 @@
 
     .button-txt-arrow {
         font-size: $boutonHomeFontSizeM + px;
-        padding: pxToRem(18) 0 pxToRem(18) pxToRem(18);
+        padding: pxToRem(18);
     }
 
     .button-fixed {

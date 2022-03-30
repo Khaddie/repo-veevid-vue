@@ -379,10 +379,12 @@ export default {
 .c-presentation2 {
 
   &__texte {
-    font-size: pxToRem(20);
+    font-size: pxToRem(16);
     line-height: pxToRem(25);
     text-align: center;
+    margin: 10%;
   }
+
 
   &__shoes {
     width: 100%;
