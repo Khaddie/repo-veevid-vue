@@ -1,51 +1,70 @@
-body {
-    margin-top: 0;
+/*body {
+  margin-top: 0;
+}
+/*nav {
+  @include small-down() {
+    display: none;
+  }
 }
 
+.listmenu{
+  display: none;
+  @include small-down() {
+display: block;
+  }
+  }
 .c-header {
-    background: no-repeat url("~@/assets/draw/forme_header.svg");
-    background-position: right bottom -35%;
-    height: pxToRem(126);
+  background: no-repeat url("~@/assets/draw/forme_header.svg");
+  background-position: right bottom -35%;
+  height: pxToRem(126);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include small-down() {
+    height: pxToRem(60);
+    background-position: right bottom 35%;
+    margin-bottom: 45px;
+  }
+
+  &__logo {
+    margin-left: pxToRem(78);
+    width: 15%;
+    @include small-down() {
+      margin-left: pxToRem(30);
+      width: 25%;
+    }
+  }
+
+  &__list {
+    margin-right: pxToRem(78);
+    list-style: none;
     display: flex;
+    font-size: pxToRem(18);
+    font-weight: bold;
     justify-content: space-between;
     align-items: center;
-
-    &__logo {
-        margin-left: pxToRem(78);
-        width: 15%;
-        @include medium-only() {
-            width: 12%;
-            margin-left: pxToRem(20);
-        }
+    @include small-down() {
+      margin: 0.875rem;
+      display: none;
     }
+  }
 
-    &__list {
-        margin-right: pxToRem(78);
-        list-style: none;
-        display: flex;
-        font-size: pxToRem(18);
-        font-weight: bold;
-        justify-content: space-between;
-        align-items: center;
-        @include medium-only() {
-            margin: 0.875rem;
-        }
+  li {
+    margin: pxToRem(18);
+color:black;
+    @include medium-only() {
+      margin: 0.7rem;
     }
+  }
 
-    li {
-        margin: pxToRem(18);
+  li > a {
+    text-decoration: none;
+    color: black;
+  }
 
-        @include medium-only() {
-            margin: 0.7rem;
-        }
-    }
-
-    li > a {
-        text-decoration: none;
-        color: $gris;
-    }
-
-    a:hover {
-        color: $orange;
-    }
+  a:hover {
+    color: $orange;
+  }
 }
+*/

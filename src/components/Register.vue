@@ -1,28 +1,50 @@
 <template>
   <div>
-    <form @submit="submit">
-      <div>
-        <label for="username">Nom utilisateur</label>
-        <input id="username" type="text" v-model="form.username">
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="form.email">
-      </div>
-      <div>
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" v-model="form.password">
-      </div>
 
-      <input type="submit" value="submit">
-    </form>
 
-    <div v-if="success">
-      <p style="color: green;">Votre inscription est réussi !</p>
-    </div>
 
-    <div v-if="error">
-      <p style="color: red;">{{ errorMessage }}</p>
+    <div class="englo">
+      <div class="c-connexion col-l-7 col-12">
+        <h1 class="title">Inscris-toi !</h1>
+        <p>Inscris-toi pour faire parti de la #veevidfamily ! </p>
+        <div class="c-connexion__contenu ">
+          <form @submit="submit">
+            <div>
+              <input placeholder="Ton identifiant" id="username" type="text" v-model="form.username">
+            </div>
+            <div>
+              <input placeholder="Ton e-mail" type="email" id="email" v-model="form.email">
+            </div>
+            <div>
+              <input placeholder="Ton mot de passe" type="password" id="password" v-model="form.password">
+            </div>
+
+            <input class="button-txt" type="submit" value="Je m'inscris ! ">
+          </form>
+
+        </div>
+
+
+        <div v-if="success">
+          <p style="color: green;">Votre inscription est réussi !</p>
+        </div>
+
+        <div v-if="error">
+          <p style="color: red;">{{ errorMessage }}</p>
+        </div>
+
+      </div>
+      <div class="col-5 shoesco">
+        <img src="./../assets/shoes/sneaker2.png" alt="" />
+      </div>
+      <!--<form @submit="submitShoe">
+         <p>JE CREE </p>
+         <div>
+           <label for="displayName">Modèle</label>
+           <input id="displayName" v-model="form.username" type="text">
+         </div>
+         <input type="submit" value="submit">
+       </form>-->
     </div>
   </div>
 </template>
@@ -69,10 +91,24 @@ export default {
 </script>
 
 <style lang="scss">
+.shoesco{
+  position: absolute;
+  left: 60%;
+}
+.englo {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 5%;
+
+  @include small-down() {
+    text-align: center;
+    padding: 15%;
+  }
+}
 form {
-  text-align: left;
-  width: 980px;
-  margin: auto;
+
 
   div {
     display: flex;

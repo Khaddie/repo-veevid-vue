@@ -1,52 +1,70 @@
 <template>
+<div>
 
-    <header class="c-header">
-
+  <header class="header" id="header">
+    <nav class="navbar container">
+      <img class="imgicon" src="@/assets/logo/Logo_base.svg">
+      <div class="menu" id="menu">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="#" class="menu-link is-active">
+              <i class="menu-icon ion-md-home"></i>
+              <span class="menu-name">Home</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <i class="menu-icon ion-md-search"></i>
+              <span class="menu-name">Search</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <i class="menu-icon ion-md-cart"></i>
+              <span class="menu-name">Cart</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">
+              <i class="menu-icon ion-md-heart"></i>
+              <span class="menu-name">Favorite</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <router-link to="/about">
+              <i class="menu-icon ion-md-contact"></i>
+              <span class="menu-name">Account</span>
+            </router-link>
+          </li>
+          <li class="menu-item ">
+            <a href="#" class="menu-link">
+              <img src="@/assets/icons/ico-profil.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <!--<header class="c-header">
       <p>Bonjour,{{user.displayName}}</p>
-
-
+      <button v-if="$store.state.user.authToken" @click="$store.commit('removeUser')">Déconnexion</button>
       <div class="c-header__logo">
       <router-link to="/">
         <img src="@/assets/logo/Logo_base.svg">
       </router-link>
       </div>
-      <nav>
-        <button class="menubtn" v-on:click="menuclick">
-      <span>
-      </span>
-        </button>
-        <div class="menu" style="display: none" ref="menu" v-on:click="menuclick">
-          <div class="image">
-            <div data-project-no="1" class="item item--1 w-100" style=" opacity: 1; z-index: 89;">
-              <img class="imgmenu w-100" src="" alt="Portfolio Khadija Boudjemline">
-            </div>
-          </div>
-          <div class="list">
-            <ul v-on:click="fermeture">
-              <router-link to="/Logofolio">
-                <li>Logofolio</li>
-              </router-link>
-              <router-link to="/Sitesweb">
-                <li ref="fermli">Sites Web</li>
-              </router-link>
-              <router-link to="/Creations">
-                <li>Créations graphiques</li>
-              </router-link>
-              <router-link to="/Apropos">
-                <li>À propos</li>
-              </router-link>
 
-              <router-link to="/Contact">
-                <li>Contact</li>
-              </router-link>
-            </ul>
-          </div>
+      <div ref="root">
+        <div class="menubtn" v-on:click="menuclick" >
+          <img src="@/assets/icons/menu.png" alt="" />
         </div>
-      </nav>
+      </div>
 
-      <nav class="nav">
 
-        <ul class="c-header__list">
+
+      <nav class="nav" >
+
+        <ul class="c-header__list" >
           <router-link to="/custom">
             <li>Vee One Nawaka </li>
           </router-link>
@@ -70,7 +88,7 @@
           <li><img src="@/assets/icons/ico-heart-empty.svg" alt=""></li>
           </router-link>
 
-          <router-link to="/register">
+          <router-link to="/connexion">
           <li><a href=""> <img src="@/assets/icons/ico-profil.svg" alt=""></a></li>
           </router-link>
           <router-link to="/connexion">
@@ -78,69 +96,255 @@
           </router-link>
         </ul>
       </nav>
-    </header>
+    </header>-->
+
+  <div class="listmobile" ref="menu" v-on:click="menuclick">
+    <div>
+      <ul class="listmenu" v-on:click="fermeture">
+        <li>Vee One Nawaka</li>
+
+        <li>Il était une fois Veevid</li>
+
+        <li>Jeu concours</li>
+
+        <li>Contactez-nous</li>
+      </ul>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
 
 export default {
   name: "Header",
-computed:{
-    user(){
+  computed: {
+    user() {
       return this.$store.state.user
     },
+  },
+  methods: {
+    menuclick: function (event) {
+      if (this.$root.$el.classList.toggle('menu-open')) {
+        this.$refs["menu"].style.display='block';
+      } else {
+        this.$refs["menu"].style.display = 'none';
+      }
+      },
+  fermeture: function (fermer) {
+    this.$refs["menu"].style.display = 'none';
+
+  },
 }
 }
 </script>
 <style lang="scss">
-body {
-  margin-top: 0;
+.imgicon{
+  width: 10%;
 }
-
-.c-header {
+#header{
+  background: no-repeat url("~@/assets/draw/forme_header.svg");
   background-position: right bottom -35%;
   height: pxToRem(126);
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  &__logo {
-    margin-left: pxToRem(78);
-    width: 100%;
-    @include medium-only() {
-      width: 12%;
-      margin-left: pxToRem(20);
-    }
-  }
 
-  &__list {
-    margin-right: pxToRem(78);
-    list-style: none;
-    display: flex;
-    font-size: pxToRem(18);
-    font-weight: bold;
-    justify-content: space-between;
-    align-items: center;
-    @include medium-only() {
-      margin: 0.875rem;
-    }
-  }
-
-  li {
-    margin: pxToRem(18);
-
-    @include medium-only() {
-      margin: 0.7rem;
-    }
-  }
-
-  li > a {
-    text-decoration: none;
-    color: $gris;
-  }
-
-  a:hover {
-    color: $orange;
+  @include small-down(){
+    display: none;
   }
 }
+.menu-name{
+  font-weight: 700;
+}
+
+
+
+
+// Elements
+.container {
+  max-width: 75rem;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+
+// Header
+.header {
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  margin: 0 auto;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: grid;
+  align-content: center;
+  width: 100%;
+  height: 3.5rem;
+  padding: 0 1rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background: var(--color-white);
+  box-shadow: var(--shadow-medium);
+
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    color: var(--color-black);
+
+    &.is-active {
+      position: relative;
+      color: var(--color-teal-800);
+      transition: all 0.35s ease;
+    }
+  }
+
+  &-icon {
+    font-size: 1.35rem;
+    line-height: 1;
+    color: inherit;
+  }
+
+  &-name {
+    display: none;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+    visibility: hidden;
+    text-transform: capitalize;
+  }
+}
+
+// Responsive Media Query Breakpoint
+@media only screen and (min-width: 360px) {
+  .menu {
+    &-name {
+      display: block;
+      visibility: visible;
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .menu {
+    &-list {
+      justify-content: center;
+      column-gap: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    background: var(--color-white);
+    box-shadow: var(--shadow-medium);
+    transition: all 0.35s ease-in-out;
+  }
+
+  .menu {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+
+    &-link {
+      &.is-active::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 2rem;
+        height: 2px;
+        border: none;
+        outline: none;
+        background: var(--color-teal-800);
+      }
+
+      &:hover {
+        color: var(--color-teal-800);
+        transition: all 0.35s ease;
+      }
+    }
+
+    &-icon {
+      display: none;
+      visibility: hidden;
+    }
+
+
+  }
+}
+
+
+.listmobile{
+
+  display: none;
+
+  @include small-down(){
+    justify-content: center;
+    line-height: 5rem;
+    position: absolute;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 25%;
+  }
+
+}
+
+.menubtn {
+
+  img {
+    width: 1.5rem;
+    float: right;
+    margin-left: 110px;
+  }
+
+  @include large-up() {
+  display: none;
+  }
+
+  }
+.menu-open{
+
+  background-color: #fff;
+  width: 100%;
+  height: 170%;
+  margin-bottom: 50%;
+}
+
+body {
+  margin-top: 0;
+}
+
 </style>

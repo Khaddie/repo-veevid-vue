@@ -1,36 +1,43 @@
 <template>
   <div>
-    <button v-if="$store.state.user.authToken" @click="$store.commit('removeUser')">Déconnexion</button>
-    <form @submit="submit">
-      <div>
-        <label for="username">Nom utilisateur</label>
-        <input id="username" type="text" v-model="form.username">
-      </div>
-      <div>
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" v-model="form.password">
-      </div>
+    <div class="englo">
+      <div class="c-connexion col-l-7 col-12">
+        <h1 class="title">Connecte-toi !</h1>
+        <p>Connecte-toi pour pouvoir <br>commander ta paire ! </p>
+        <div class="c-connexion__contenu ">
+          <form @submit="submit">
+            <div>
+              <input placeholder="Ton identifiant" id="username" type="text" v-model="form.username">
+            </div>
+            <div>
+              <input placeholder="Ton mot de passe" type="password" id="password" v-model="form.password">
+            </div>
 
-      <input type="submit" value="submit">
-    </form>
+            <input class="button-txt" type="submit" value="Je me connecte !">
+          </form>
+        </div>
 
-    <div v-if="success">
-      <p style="color: green;">Votre connexion est réussi !</p>
+
+        <div v-if="success">
+          <p style="color: green;">Votre connexion est réussi !</p>
+        </div>
+
+        <div v-if="error">
+          <p style="color: red;">{{ errorMessage }}</p>
+        </div>
+      </div>
+      <div class="col-5 shoesco">
+        <img src="./../assets/shoes/sneaker2.png" alt=""/>
+      </div>
+      <!--<form @submit="submitShoe">
+         <p>JE CREE </p>
+         <div>
+           <label for="displayName">Modèle</label>
+           <input id="displayName" v-model="form.username" type="text">
+         </div>
+         <input type="submit" value="submit">
+       </form>-->
     </div>
-
-    <div v-if="error">
-      <p style="color: red;">{{ errorMessage }}</p>
-    </div>
-
-    <form @submit="submitShoe">
-      <p>JE CREE </p>
-      <div>
-        <label for="displayName">Modèle</label>
-        <input id="displayName" v-model="form.username" type="text">
-      </div>
-      <input type="submit" value="submit">
-    </form>
-    
   </div>
 </template>
 
@@ -73,23 +80,6 @@ export default {
         this.error = true
         this.success = false
       })
-    },
-    submitShoe(screen) {
-      axios.post('https://veevid.khadijaboudjemline.fr/wp-json/wp/v2/shoes',
-          {
-            "status": "publish",
-            "title": this.$store.state.user.displayName,
-          },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${this.$store.state.user.authToken}`,
-            }
-          }).then(response => {
-        if (response.status === 200) {
-          console.log("ok ca marche")
-        }
-      })
     }
 
 
@@ -98,21 +88,72 @@ export default {
 </script>
 
 <style lang="scss">
-form {
-  text-align: left;
-  width: 980px;
-  margin: auto;
 
-  div {
-    display: flex;
+.shoesco {
+  position: absolute;
+  left: 60%;
 
-    label {
-      width: 200px;
+  @include small-down() {
+    display: none;
+  }
+}
+
+img {
+
+  width: 50%;
+}
+
+.englo {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: 5%;
+
+  @include small-down() {
+    text-align: center;
+    padding: 15%;
+  }
+}
+
+.title {
+  font-size: pxToRem(34);
+
+}
+
+.c-connexion {
+  p {
+    margin: pxToRem(10) 0;
+    font-size: pxToRem(16);
+    line-height: pxToRem(28);
+    @include small-down() {
+      margin: pxToRem(20) 0;
     }
+  }
 
-    input {
+}
+
+form {
+  width: 50%;
+  justify-content: center;
+  @include small-down() {
+    width: 100%;
+  }
+
+  input {
+    padding: 5%;
+    width: 50%;
+    text-align: center;
+    margin-bottom: pxToRem(5);
+  }
+
+  input[type="submit"] {
+    margin-top: pxToRem(10);
+    @include small-down() {
       width: 100%;
+      margin-top: pxToRem(20);
     }
   }
 }
+
 </style>
