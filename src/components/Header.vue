@@ -22,21 +22,24 @@
         </div>
         <div class="list">
           <ul v-on:click="fermeture">
-            <router-link to="/Logofolio">
-              <li>Logofolio</li>
+            <router-link to="/custom">
+              <li>Vee One Nawaka</li>
             </router-link>
-            <router-link to="/Sitesweb">
-              <li ref="fermli">Sites Web</li>
+            <router-link to="/concours">
+              <li ref="fermli">Jeu concours</li>
             </router-link>
-            <router-link to="/Creations">
-              <li>Créations graphiques</li>
+            <router-link to="/about">
+              <li>Il était une fois Veevid</li>
             </router-link>
-            <router-link to="/Apropos">
+            <router-link to="/contact">
               <li>À propos</li>
             </router-link>
 
             <router-link to="/Contact">
-              <li>Contact</li>
+
+              <button class="button-txt-arrow">Contactez-nous</button>
+            </router-link>
+            <router-link to="/Contact">
             </router-link>
           </ul>
         </div>
@@ -521,15 +524,15 @@ a{
 
   .menuo li {
     font-size: 20px;
-    margin-bottom: 30px;
-    font-family: Lato, sans-serif;
+    margin-bottom: pxToRem(50);
+    font-family: $font;
     font-weight: 300;
   }
 
   .menurespon a {
     transition: opacity 300ms ease;
     width: fit-content;
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 10px;
     text-decoration: none;
     color: black;

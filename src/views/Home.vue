@@ -377,7 +377,6 @@ export default {
 
 // Zone 1 
 .c-presentation2 {
-  margin: pxToRem(10);
 
   &__texte {
     font-size: pxToRem(20);
