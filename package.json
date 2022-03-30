@@ -7,9 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^1.5.4",
+    "@lottiefiles/vue-lottie-player": "^1.0.2",
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
     "dom-to-image-more": "^2.9.5",
+    "lottie-web": "^5.8.1",
+    "lottie-web-vue": "^1.2.1",
     "sass": "^1.46.0",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.11",
